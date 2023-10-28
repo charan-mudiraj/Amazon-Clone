@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+}
+.component {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.component:hover {
+  outline: 1px solid white;
+}
+p {
+  color: white;
+  font-family: sans-serif;
+}
+.thin {
+  font-size: 13px;
+}
+.bold {
+  font-size: 15px;
+  font-weight: bold;
+}
+#header {
+  display: flex;
+  background-color: #131921;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#logo {
+  display: flex;
+}
+#logoImage {
+  height: 38px;
+}
+#in {
+  font-size: 15px;
+  padding-top: 6px;
+}
+#location {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+#locationIcon {
+  grid-row: 1 / span 2;
+  height: 16px;
+  padding-top: 17px;
+  padding-right: 2px;
+}
