@@ -25,7 +25,56 @@ function Location() {
     </div>
   );
 }
-function SearchBar() {}
+function SearchBar() {
+  let iconPath = "icons_&_logos/search.png";
+  const searchFilterOptions = [
+    { title: "All Categories", value: "all" },
+    { title: "Alexa Skills", value: "skills" },
+    { title: "Amazon Fashion", value: "fashion" },
+    { title: "Amazon Fresh", value: "fresh" },
+    { title: "Amazon Pharmacy", value: "pharmacy" },
+    { title: "Appliances", value: "appliances" },
+    { title: "Beauty", value: "beauty" },
+  ];
+  function SearchFilterOption(option) {
+    return (
+      <option value={option.value}>
+        <p>{option.title}</p>
+      </option>
+    );
+  }
+  function SearchRequest() {
+    console.log("search Request");
+  }
+  return (
+    <form action="" id="searchBarFlex">
+      <div id="searchBarLeft">
+        <select
+          name="search filter"
+          id="searchFilter"
+          class="searchBarComponent"
+        >
+          {searchFilterOptions.map(SearchFilterOption)}
+        </select>
+      </div>
+      <div id="searchBarCenter">
+        <input
+          type="text"
+          placeholder="Search Amazon.in"
+          id="searchBar"
+          class="searchBarComponent"
+        />
+      </div>
+      <div
+        id="searchBarRight"
+        class="searchBarComponent"
+        onClick={SearchRequest}
+      >
+        <img src={iconPath} alt="" id="searchIcon" />
+      </div>
+    </form>
+  );
+}
 function LanguageSelector() {}
 function AccountAndLists() {}
 function ReturnsAndOrders() {}

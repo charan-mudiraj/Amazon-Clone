@@ -1,0 +1,37 @@
+#navBar {
+  background-color: #232f3e;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0;
+}
+#allSlider {
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  user-select: none;
+  cursor: pointer;
+}
+#allSlider:hover {
+  outline: 2px solid white;
+}
+#allSlider > p {
+  font-size: large;
+}
+#moreIcon {
+  height: 20px;
+  width: 20px;
+  padding-right: 4px;
+}
+.navItem {
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.navItem:hover {
+  outline: 2px solid white;
+}
+a {
+  user-select: none;
+  text-decoration: none;
+}

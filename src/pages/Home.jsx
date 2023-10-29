@@ -1,7 +1,13 @@
 import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 
 function Home() {
-  return <Header />;
+  return (
+    <div>
+      <Header />
+      <NavBar />
+    </div>
+  );
 }
 
 export default Home;
