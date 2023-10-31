@@ -5,6 +5,9 @@
   position: relative;
   top: 0;
 }
+#navBar p {
+  color: white;
+}
 #allSlider {
   display: flex;
   margin: 5px;
@@ -31,7 +34,7 @@
 .navItem:hover {
   outline: 2px solid white;
 }
-a {
+.navLink {
   user-select: none;
   text-decoration: none;
 }

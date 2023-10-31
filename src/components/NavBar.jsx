@@ -18,7 +18,7 @@ function NavBar() {
   const iconPath = "icons_&_logos/more.jpg";
   function NavigatorItem(item) {
     return (
-      <a href={item.link}>
+      <a href={item.link} class="navLink">
         <div class="navItem">
           <p id={item.id}>{item.title}</p>
         </div>

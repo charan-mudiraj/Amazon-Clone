@@ -11,9 +11,8 @@
 .component:hover {
   outline: 1px solid white;
 }
-p {
+#header p {
   color: white;
-  font-family: sans-serif;
 }
 .thin {
   font-size: 13px;
