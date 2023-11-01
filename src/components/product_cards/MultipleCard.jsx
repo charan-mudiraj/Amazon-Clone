@@ -5,17 +5,17 @@ function MultipleCard() {
   function ProductDiv(imgProps) {
     return (
       <a href="">
-        <div class="productImage">
-          <img src={imgProps.path} alt={imgProps.name} />
+        <div class="mc_productImage">
+          <img src={imgProps.path} alt={imgProps.name} class="mc_img" />
         </div>
-        <p class="productTitle">{imgProps.name}</p>
+        <p class="mc_productTitle">{imgProps.name}</p>
       </a>
     );
   }
   return (
-    <div id="multipleCard">
-      <p id="cardTitle">Keep shopping for</p>
-      <div id="productsGrid">{products.map(ProductDiv)}</div>
+    <div id="mc">
+      <p id="mc_cardTitle">Keep shopping for</p>
+      <div id="mc_productsGrid">{products.map(ProductDiv)}</div>
       <a href="">View your browsing history</a>
     </div>
   );

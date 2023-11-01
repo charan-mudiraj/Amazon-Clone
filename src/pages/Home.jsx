@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import MultipleCard from "../components/product_cards/MultipleCard";
+import SingleCard from "../components/product_cards/SingleCard";
 import "./css/Home.css";
 
 function BannerSlider() {
@@ -26,6 +27,7 @@ function Home() {
       <NavBar />
       <BannerSlider />
       <MultipleCard />
+      <SingleCard />
     </div>
   );
 }
