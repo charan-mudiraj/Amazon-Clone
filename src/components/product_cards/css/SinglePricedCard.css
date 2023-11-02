@@ -1,0 +1,48 @@
+#spc {
+  background-color: white;
+  padding: 20px;
+  /* border-radius: 20px; */
+  margin: 25px;
+  box-shadow: 0px 0px 7px 0px grey;
+  height: min-content;
+  width: min-content;
+}
+.spc_productImage {
+  background-color: #f7f7f7;
+  padding: 10px;
+}
+#spc_img {
+}
+
+#spc a {
+  text-decoration: none;
+  font-size: 13px;
+}
+#spc_price,
+#spc_rs,
+#spc_mrp {
+  display: flex;
+  text-align: left;
+}
+#spc_rs {
+  color: black;
+  padding-right: 5px;
+}
+#spc_rs_symbol {
+  font-size: small;
+  padding-top: 1px;
+}
+#spc_rs_value {
+  font-size: large;
+}
+#spc_mrp {
+  color: grey;
+  align-items: center;
+  font-size: 12px;
+}
+#spc_mrp_value {
+  text-decoration: line-through;
+}
+#spc_product_title {
+  color: black;
+}

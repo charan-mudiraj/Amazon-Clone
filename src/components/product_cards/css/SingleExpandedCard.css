@@ -1,0 +1,12 @@
+#sec {
+  background-color: white;
+  padding: 20px;
+  /* border-radius: 20px; */
+  margin: 25px;
+  box-shadow: 0px 0px 7px 0px grey;
+  width: fit-content;
+  height: min-content;
+}
+#sec_img {
+  width: 100%;
+}
