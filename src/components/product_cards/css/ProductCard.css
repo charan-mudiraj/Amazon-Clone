@@ -1,0 +1,44 @@
+#pc {
+  width: min-content;
+  min-width: 220px;
+  padding: 12px;
+}
+#pc_img {
+  width: 100%;
+}
+#pc_product_title,
+#pc_rating {
+  color: #007185;
+  font-size: 15px;
+  align-items: baseline;
+}
+#pc a {
+  text-decoration: none;
+  font-size: 13px;
+}
+#pc_product_title:hover {
+  text-decoration: underline;
+  color: #f08804;
+}
+#pc_rs,
+#pc_mrp,
+#pc_rating {
+  display: flex;
+  text-align: left;
+}
+#pc_rating:hover {
+  color: #f08804;
+}
+#pc_rs_value {
+  padding-right: 5px;
+  font-size: 22px;
+  color: #b12704;
+}
+#pc_mrp {
+  color: grey;
+  align-items: center;
+  font-size: 12px;
+}
+#pc_mrp_value {
+  text-decoration: line-through;
+}

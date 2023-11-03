@@ -4,6 +4,8 @@ import MultipleCard from "../components/product_cards/MultipleCard";
 import SingleCard from "../components/product_cards/SingleCard";
 import SingleExpandedCard from "../components/product_cards/SingleExpandedCard";
 import SinglePricedCard from "../components/product_cards/SinglePricedCard";
+import ProductCard from "../components/product_cards/ProductCard";
+import ProductsList from "../components/ProductsList";
 import "./css/Home.css";
 
 function BannerSlider() {
@@ -32,6 +34,8 @@ function Home() {
       <SingleCard />
       <SingleExpandedCard />
       <SinglePricedCard />
+      <ProductCard />
+      <ProductsList />
     </div>
   );
 }

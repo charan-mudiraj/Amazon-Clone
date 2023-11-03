@@ -1,0 +1,42 @@
+#productsListDiv {
+  background-color: white;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+#productsList {
+  display: flex;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.scrollBtn {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px grey;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+}
+#left.scrollBtn {
+  left: 20px;
+}
+#right.scrollBtn {
+  right: 20px;
+}
+.scrollBtn:focus {
+  box-shadow: 0px 0px 5px 2px #007185ab;
+  outline: 0.2px solid #007185;
+}
+.scrollBtn img {
+  height: 25px;
+}
