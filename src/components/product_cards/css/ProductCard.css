@@ -1,7 +1,9 @@
 #pc {
   width: min-content;
-  min-width: 220px;
+  min-width: 218px;
+  max-width: 218px;
   padding: 12px;
+  /* background-color: grey; */
 }
 #pc_img {
   width: 100%;
