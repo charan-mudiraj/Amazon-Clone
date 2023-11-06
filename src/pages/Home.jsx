@@ -8,6 +8,7 @@ import ProductCard from "../components/product_cards/ProductCard";
 import ProductsList from "../components/ProductsList";
 import "./css/Home.css";
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 function BannerImage() {
   const bannerPath = "other_images/banner1.jpg";
@@ -72,6 +73,7 @@ function Home() {
       <SingleExpandedCard />
       <SinglePricedCard />
       <ProductsList />
+      <Footer />
     </div>
   );
 }
