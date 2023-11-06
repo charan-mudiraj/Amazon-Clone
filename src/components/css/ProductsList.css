@@ -1,19 +1,43 @@
 #productsListExpanded {
   background-color: white;
-  width: 100%;
   height: fit-content;
+  width: 100%;
   display: flex;
   align-items: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 #productsListDiv {
-  margin-left: 70px;
-  margin-right: 70px;
   overflow: hidden;
 }
 #productsList {
   display: flex;
+  margin-left: 95px;
+  gap: 18px;
+}
+#pl_left_scrollBtn_div {
+  background-color: white;
+  height: 355px;
+  width: 80px;
+  box-shadow: 24px 0px 12px -12px white;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#pl_right_scrollBtn_div {
+  background-color: white;
+  height: 355px;
+  width: 80px;
+  box-shadow: -24px 0px 12px -12px white;
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .scrollBtn {
   background-color: white;
@@ -25,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  /* position: absolute; */
   cursor: pointer;
   border: none;
   user-select: none;

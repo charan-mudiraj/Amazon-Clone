@@ -23,7 +23,7 @@ function ProductsList() {
     setScrollPosition(scrollPosition + 1);
   }
   const plScrollStyle = {
-    transform: "translate(" + -(scrollPosition * (218 + 24) * 5) + "px)",
+    transform: "translate(" + -(scrollPosition * (218 + 18) * 5) + "px)",
     transition: "transform 0.7s",
   };
   return (
@@ -43,8 +43,12 @@ function ProductsList() {
           <ProductCard />
         </div>
       </div>
-      <ScrollBtn direction="left" onClick={scrollLeft} />
-      <ScrollBtn direction="right" onClick={scrollRight} />
+      <div id="pl_left_scrollBtn_div">
+        <ScrollBtn direction="left" onClick={scrollLeft} />
+      </div>
+      <div id="pl_right_scrollBtn_div">
+        <ScrollBtn direction="right" onClick={scrollRight} />
+      </div>
     </div>
   );
 }

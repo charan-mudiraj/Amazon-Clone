@@ -3,11 +3,11 @@ import "./css/ProductCard.css";
 function ProductCard() {
   const imagePath = "products_images/8.jpg";
   return (
-    <div id="pc">
-      <a href="">
-        <div class="pc_productImage">
+    <a href="" id="pc_link">
+      <div id="pc">
+        <button class="pc_product_image">
           <img src={imagePath} alt="" id="pc_img" />
-        </div>
+        </button>
         <p id="pc_product_title">
           Acer Predator Helios 16 Gaming Laptop 13th Gen Intel Core i9 (Windows
           11 Home...
@@ -23,8 +23,8 @@ function ProductCard() {
             <p id="pc_mrp_value">₹2,07,999.00</p>
           </div>
         </div>
-      </a>
-    </div>
+      </div>
+    </a>
   );
 }
 

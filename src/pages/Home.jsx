@@ -7,21 +7,58 @@ import SinglePricedCard from "../components/product_cards/SinglePricedCard";
 import ProductCard from "../components/product_cards/ProductCard";
 import ProductsList from "../components/ProductsList";
 import "./css/Home.css";
+import { useState } from "react";
 
-function BannerSlider() {
+function BannerImage() {
   const bannerPath = "other_images/banner1.jpg";
-  const bannerStyle = {
-    background:
-      "linear-gradient(to bottom, rgba(0, 0, 0, 0) 55%, #e6e6e6 90%), url(" +
-      bannerPath +
-      ")",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    position: "relative",
-    top: 0,
-    height: "100%",
+  return <img src={bannerPath} alt="banner" class="banner-image" />;
+}
+function BannerBtn(props) {
+  const leftArrow = "<";
+  const rightArrow = ">";
+  return (
+    <button class="banner-btn" id={props.direction} onClick={props.onClick}>
+      <p>{props.direction == "left" ? leftArrow : rightArrow}</p>
+    </button>
+  );
+}
+function BannerSlider() {
+  // const bannerStyle = {
+  //   background:
+  //     "linear-gradient(to bottom, rgba(0, 0, 0, 0) 55%, #e6e6e6 90%), url(" +
+  //     bannerPath +
+  //     ")",
+  //   backgroundRepeat: "no-repeat",
+  //   position: "relative",
+  //   backgroundSize: "cover",
+  //   top: 0,
+  //   height: "100%",
+  // };
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const bannerTransitionStyle = {
+    transition: "transform 0.5s",
+    transform: "translate(" + -(scrollPosition * 100) + "%)",
   };
-  return <div style={bannerStyle}></div>;
+  function scrollLeft() {
+    if (scrollPosition > 0) {
+      setScrollPosition(scrollPosition - 1);
+    }
+  }
+  function scrollRight() {
+    setScrollPosition(scrollPosition + 1);
+  }
+  return (
+    <div id="banner-slider">
+      <div id="banner-flex" style={bannerTransitionStyle}>
+        <BannerImage />
+        <BannerImage />
+        <BannerImage />
+      </div>
+      <div id="banner-gradient"></div>
+      <BannerBtn direction="left" onClick={scrollLeft} />
+      <BannerBtn direction="right" onClick={scrollRight} />
+    </div>
+  );
 }
 
 function Home() {
@@ -34,7 +71,6 @@ function Home() {
       <SingleCard />
       <SingleExpandedCard />
       <SinglePricedCard />
-      <ProductCard />
       <ProductsList />
     </div>
   );

@@ -2,11 +2,22 @@
   width: min-content;
   min-width: 218px;
   max-width: 218px;
-  padding: 12px;
-  /* background-color: grey; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
+
 #pc_img {
   width: 100%;
+}
+.pc_product_image {
+  background-color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pc_product_image:focus {
+  outline: 2px solid #007185;
 }
 #pc_product_title,
 #pc_rating {
@@ -14,12 +25,11 @@
   font-size: 15px;
   align-items: baseline;
 }
-#pc a {
+#pc_link {
   text-decoration: none;
   font-size: 13px;
 }
 #pc_product_title:hover {
-  text-decoration: underline;
   color: #f08804;
 }
 #pc_rs,
