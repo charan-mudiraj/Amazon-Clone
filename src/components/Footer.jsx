@@ -1,8 +1,11 @@
 import "./css/Footer.css";
 
 function TopPositionScroller() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
-    <button id="f-top-scroller-btn">
+    <button id="f-top-scroller-btn" onClick={scrollToTop}>
       <p>Back to Top</p>
     </button>
   );
