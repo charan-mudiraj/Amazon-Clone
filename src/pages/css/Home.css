@@ -7,8 +7,8 @@ body {
 #banner-slider {
   position: relative;
   top: 0;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  overflow: hidden;
 }
 #banner-flex {
   display: flex;
@@ -22,7 +22,7 @@ body {
   position: absolute;
   left: -150px;
   bottom: 0;
-  box-shadow: inset 0px -240px 90px -6px #e6e6e6;
+  box-shadow: inset 0px -240px 150px -60px #e6e6e6;
 }
 .banner-btn {
   height: 50%;

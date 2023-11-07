@@ -1,13 +1,97 @@
 #footer {
-  background-color: #131a22;
   height: fit-content;
   width: 100%;
   position: relative;
   bottom: 0;
+  color: white;
+}
+#f-top-scroller-btn {
+  background-color: #37475a;
+  width: 100%;
+  height: 50px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#f-top-scroller-btn:hover {
+  background-color: #37475aee;
+}
+.f-access-list-title {
+  font-weight: bold;
+}
+.f-access-list-item {
+  font-size: small;
+  color: rgba(255, 255, 255, 0.795);
+  cursor: pointer;
+}
+.f-access-list-item:hover {
+  text-decoration: underline;
+}
+#f-access-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#f-hr {
+  border: 0.1rem solid #37475a;
+}
+#f-access {
+  background-color: #232f3e;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 50px 0px 50px 0px;
+}
+#f-language {
+  display: flex;
+  gap: 90px;
+  justify-content: center;
+  align-items: start;
+}
+#f-dns-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 12px;
+  justify-content: center;
+}
+#f-dns-links p {
+  cursor: pointer;
+}
+#f-dns-links p:hover {
+  text-decoration: underline;
+}
+#f-dns-lang {
+  background-color: #232f3e;
+  padding: 50px 250px 50px 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#f-lang-selector {
+  background-color: #232f3e;
+  border: 1px solid grey;
+  height: 30px;
+  cursor: pointer;
+}
+#f-lang-selector:focus {
+  border: 1px solid grey;
+  outline: none;
+}
+.f-lang-option {
+  background-color: white;
+  color: grey;
+}
+#f-language img {
+  height: 33px;
+  cursor: pointer;
+}
+#f-moa-copyright {
+  background-color: #131a22;
   padding-top: 20px;
   padding-bottom: 40px;
 }
-#desc-list-grid {
+#moa-list-grid {
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: auto auto auto auto;
@@ -16,22 +100,22 @@
   padding-right: 200px;
   padding-bottom: 10px;
 }
-.f-desc-item {
+.f-moa-item {
   padding: 15px;
   width: fit-content;
 }
-.f-desc-item-title {
+.f-moa-item-title {
   color: white;
   font-size: smaller;
 }
-.f-desc-item-desc {
+.f-moa-item-desc {
   color: grey;
   font-size: smaller;
 }
-.f-desc-item a {
+.f-moa-item a {
   text-decoration: none;
 }
-.f-desc-item a:hover {
+.f-moa-item a:hover {
   text-decoration: underline;
 }
 #copyright {
@@ -40,7 +124,6 @@
   align-items: center;
   gap: 5px;
   font-size: small;
-  color: white;
 }
 #copyright-links {
   display: flex;
