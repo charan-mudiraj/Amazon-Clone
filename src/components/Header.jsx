@@ -10,18 +10,13 @@ function Logo() {
   );
 }
 function Location() {
-  let userName = "Charan";
-  let city = "Hyderabad";
-  let postalCode = "500052";
   let iconPath = "icons_&_logos/location.png";
 
   return (
     <div id="location" class="component">
       <img src={iconPath} alt="" id="locationIcon" />
-      <p class="thin">Deliver to {userName}</p>
-      <p class="bold">
-        {city} {postalCode}
-      </p>
+      <span class="thin">Deliver to Hyderabad</span>
+      <p class="bold">Update location</p>
     </div>
   );
 }
@@ -75,7 +70,15 @@ function SearchBar() {
     </form>
   );
 }
-function LanguageSelector() {}
+function LanguageSelector() {
+  const flagPath = "icons_&_logos/flag.png";
+  return (
+    <div id="h-lang" class="component">
+      <img src={flagPath} alt="flag" />
+      <p>EN</p>
+    </div>
+  );
+}
 function AccountAndLists() {}
 function ReturnsAndOrders() {}
 function Cart() {}

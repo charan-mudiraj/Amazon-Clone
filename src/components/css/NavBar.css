@@ -5,7 +5,7 @@
   position: relative;
   top: 0;
 }
-#navBar p {
+.navItem p {
   color: white;
 }
 #allSlider {
@@ -16,6 +16,7 @@
   cursor: pointer;
   background-color: #232f3e;
   border: none;
+  color: white;
 }
 #allSlider:hover {
   outline: 2px solid white;
@@ -54,6 +55,7 @@
   align-items: center;
   gap: 10px;
   padding: 15px 170px 15px 30px;
+  color: white;
 }
 #nb-sliderDiv-user img {
   height: 28px;
@@ -82,4 +84,33 @@
   border: none;
   cursor: pointer;
   font-size: 28px;
+}
+#nb-slider-contents {
+  padding: 18px 0;
+  overflow: scroll;
+  height: 85%;
+  background-color: white;
+}
+.nb-slider-content {
+  display: flex;
+  flex-direction: column;
+}
+.nb-slider-content hr {
+  border: 1px solid rgba(0, 0, 0, 0.158);
+}
+.nb-slider-content-title {
+  font-weight: bold;
+  font-size: large;
+  color: rgba(0, 0, 0, 0.842);
+}
+.nb-slider-content-item {
+  color: rgba(0, 0, 0, 0.856);
+  font-size: medium;
+  cursor: pointer;
+}
+.nb-slider-content-item:hover {
+  background-color: rgba(0, 0, 0, 0.082);
+}
+.nb-slider-content p {
+  padding: 10px 0 10px 35px;
 }

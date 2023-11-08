@@ -56,6 +56,17 @@ function SliderDiv(props) {
       items: ["Your Account", "Customer Service", "Sign Out"],
     },
   ];
+  function SliderContent(content) {
+    return (
+      <div class="nb-slider-content">
+        <p class="nb-slider-content-title">{content.title}</p>
+        {content.items.map((item) => (
+          <p class="nb-slider-content-item">{item}</p>
+        ))}
+        <hr />
+      </div>
+    );
+  }
   return (
     <div>
       <div id="nb-sliderDiv" style={transitionStyle}>
@@ -63,6 +74,7 @@ function SliderDiv(props) {
           <img src={userIconPath} alt="user" />
           <p>Hello, Charan</p>
         </div>
+        <div id="nb-slider-contents">{sliderContents.map(SliderContent)}</div>
       </div>
       <button
         id="nb-sliderDiv-closeBtn"
