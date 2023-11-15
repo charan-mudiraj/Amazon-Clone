@@ -72,10 +72,37 @@ function SearchBar() {
 }
 function LanguageSelector() {
   const flagPath = "icons_&_logos/flag.png";
+  const languages = [
+    { name: "English", code: "EN" },
+    { name: "हिन्दी", code: "HI" },
+    { name: "தமிழ்", code: "TA" },
+    { name: "తెలుగు", code: "TE" },
+    { name: "ಕನ್ನಡ", code: "KN" },
+    { name: "മലയാളം", code: "ML" },
+    { name: "বাংলা", code: "BM" },
+    { name: "मराठी", code: "MR" },
+  ];
+  function LangOption(lang) {
+    return (
+      <option class="h-lang-option">
+        <div>
+          <input type="radio" />
+          <p>
+            {lang.name} - {lang.code}
+          </p>
+        </div>
+      </option>
+    );
+  }
   return (
     <div id="h-lang" class="component">
       <img src={flagPath} alt="flag" />
       <p>EN</p>
+      <input list="browsers"></input>
+      <datalist id="browsers">
+        <option>avds</option>
+        <option>sadsfs</option>
+      </datalist>
     </div>
   );
 }
