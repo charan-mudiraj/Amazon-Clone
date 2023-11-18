@@ -1,0 +1,75 @@
+#product {
+  background-color: white;
+}
+#pc-md {
+  display: flex;
+}
+.pc-icon {
+  height: 27px;
+}
+#md-price {
+  display: flex;
+}
+#md-mrp {
+  display: flex;
+}
+#md-offersDiv > #title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#md-offersDiv > #cards {
+  display: flex;
+  gap: 10px;
+  height: min-content;
+}
+#md-curr-view img {
+  width: fit-content;
+}
+.md-offerCard {
+  box-shadow: 0px 0px 6px 0px grey;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100px;
+}
+.md-offerCard p,
+a {
+  font-size: 14px;
+}
+#md-buyCard {
+  height: fit-content;
+  /* box-shadow: 0px 0px 6px 0px grey; */
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 920px;
+  margin: 20px 17px 0px 20px;
+  padding: 15px;
+  gap: 7px;
+}
+#add-to-cart-btn {
+  background-color: #ffd814;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0px 0px 3px 0px rgb(197, 197, 197);
+  padding: 8px 0px;
+  margin-top: 10px;
+}
+#buy-now-btn {
+  background-color: #ffa41c;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0px 0px 3px 0px rgb(197, 197, 197);
+  padding: 8px 0px;
+  margin-bottom: 5px;
+}
+#add-to-wish-list-btn {
+  background-color: white;
+  box-shadow: 0px 0px 3px 0px rgb(197, 197, 197);
+  border-radius: 10px;
+  text-align: start;
+  border: 1px solid rgb(160, 160, 160);
+  padding: 7px 0px 7px 10px;
+  margin-top: 5px;
+}

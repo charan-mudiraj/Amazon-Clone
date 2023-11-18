@@ -2,15 +2,20 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import ProductsList from "../components/ProductsList.jsx";
+import "./css/Product.css";
 
 function ProductContent() {
   function MainDiv() {
     function Views() {
+      const dir = "temp_product/thumbnails/";
       const views = [];
-      function View(props) {
+      for (let i = 1; i <= 6; i++) {
+        views.push(dir + i + ".jpg");
+      }
+      function View(href) {
         return (
           <div id="md-view">
-            <img src={props.href} alt="" />
+            <img src={href} alt="" />
           </div>
         );
       }
@@ -27,11 +32,15 @@ function ProductContent() {
       function TitleDiv() {
         return (
           <div id="md-titleDiv">
-            <h3>This is Title</h3>
+            <p>
+              Acer Predator Helios 16 Gaming Laptop | 13th Gen Intel Core
+              i7-13700HX | NVIDIA GeForce RTX 4060 | 16" 2560 x 1600 165Hz
+              G-SYNC Display | 16GB DDR5 | 1TB Gen 4 SSD | Killer Wi-Fi 6E |
+              PH16-71-74UU
+            </p>
             <a>Visit the Acer Store</a>
             <div>
               <p>⭐⭐⭐⭐⭐</p>
-              <p>12</p>
             </div>
           </div>
         );
@@ -40,10 +49,10 @@ function ProductContent() {
         return (
           <div id="md-priceDiv">
             <div id="md-price">
-              <p id="discount"></p>
+              <p id="discount">-11%</p>
               <p id="value">₹1,80,990.00</p>
             </div>
-            <div id="md-mrpDiv">
+            <div id="md-mrp">
               <p id="text">M.R.P.: </p>
               <p id="value">₹2,07,999.00</p>
             </div>
@@ -58,15 +67,16 @@ function ProductContent() {
         );
       }
       function OffersDiv() {
+        const iconPath = "icons_&_logos/offers.png";
         const offers = [
           {
             title: "Partner Offers",
-            desc: "Get up to 3 months Audible Membership for ₹ 2 *T&C applyGet up to 3 months Audible Membership for ₹ 2 *T&C apply",
+            desc: "Get up to 3 months Audible Membership.",
             offerCount: 2,
           },
           {
             title: "No Cost EMI",
-            desc: "Upto ₹6,394.03 EMI interest savings on Amazon Pay ICICI…",
+            desc: "Upto ₹6,394.03 EMI interest savings on Amazon Pay ICICI.",
             offerCount: 1,
           },
           {
@@ -86,7 +96,15 @@ function ProductContent() {
             </div>
           );
         }
-        return <div id="md-offersDiv">{offers.map(OfferCard)}</div>;
+        return (
+          <div id="md-offersDiv">
+            <div id="title">
+              <img src={iconPath} alt="" class="pc-icon" />
+              <p>Offers</p>
+            </div>
+            <div id="cards">{offers.map(OfferCard)}</div>
+          </div>
+        );
       }
       function IconsDiv() {
         const icons = [
@@ -115,21 +133,47 @@ function ProductContent() {
       return (
         <div id="md-details">
           <TitleDiv />
+          <hr />
           <PriceDiv />
+          <hr />
           <OffersDiv />
+          <hr />
           <IconsDiv />
+          <hr />
           <SpecsDiv />
+          <hr />
           <AboutDiv />
         </div>
       );
     }
     function BuyCard() {
-      return <div id="md-buyCard"></div>;
+      return (
+        <div id="md-buyCard">
+          <p>
+            Delivery by <b>Friday, 24 November</b>
+          </p>
+          <p style={{ color: "green" }}>
+            <b>In Stock</b>
+          </p>
+          <p>
+            Quantity:
+            <select>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </p>
+          <button id="add-to-cart-btn">Add to Cart</button>
+          <button id="buy-now-btn">Buy Now</button>
+          <hr />
+          <button id="add-to-wish-list-btn">Add to Wish List</button>
+        </div>
+      );
     }
     return (
       <div id="pc-md">
         <Views />
-        <MainView href="" />
+        <MainView href="temp_product/5.jpg" />
         <DetialsDiv />
         <BuyCard />
       </div>
@@ -151,7 +195,7 @@ function Product() {
       <Header />
       <NavBar />
       <ProductContent />
-      <ProductsList />
+      {/* <ProductsList /> */}
       <Footer />
     </div>
   );
