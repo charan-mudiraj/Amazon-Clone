@@ -39,8 +39,8 @@ function ProductContent() {
               PH16-71-74UU
             </p>
             <a>Visit the Acer Store</a>
-            <div>
-              <p>⭐⭐⭐⭐⭐</p>
+            <div id="rating">
+              <p>★★★★✰</p>
             </div>
           </div>
         );
@@ -59,8 +59,8 @@ function ProductContent() {
             <div id="md-emi-options">
               <p>Inclusive of all taxes</p>
               <p>
-                <b>EMI </b>starts at ₹6,885. No Cost Emi available{" "}
-                <a>EMI options</a>
+                <b>EMI </b>starts at ₹6,885.
+                <br /> No Cost Emi available <a>EMI options</a>
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@ function ProductContent() {
           },
           {
             title: "Back Offer",
-            desc: "Upto ₹500.00 discount on Credit Cards, Debit Cards",
+            desc: "Upto ₹500.00 discount on Credit Cards & Debit Cards.",
             offerCount: 1,
           },
         ];
@@ -107,11 +107,15 @@ function ProductContent() {
         );
       }
       function IconsDiv() {
+        const dir = "icons_&_logos/";
         const icons = [
-          { href: "", name: "7 days Returnable" },
-          { href: "", name: "Free Delivery" },
-          { href: "", name: "Top Brand" },
-          { href: "", name: "Amazon Delivered" },
+          { href: dir + "icon-returns.png", name: "7 days Returnable" },
+          { href: dir + "icon-amazon-delivered.png", name: "Free Delivery" },
+          { href: dir + "icon-top-brand.png", name: "Top Brand" },
+          {
+            href: dir + "trust_icon_free_shipping.png",
+            name: "Amazon Delivered",
+          },
         ];
         function Icon(props) {
           return (
@@ -124,10 +128,49 @@ function ProductContent() {
         return <div id="md-iconsDiv">{icons.map(Icon)}</div>;
       }
       function SpecsDiv() {
-        return <div id="md-specsDiv"></div>;
+        const specs = [
+          { name: "Brand", desc: "Acer" },
+          { name: "Model Name", desc: "Predator Helios 16" },
+          { name: "Screen Size", desc: "16 Inches" },
+          { name: "Colour", desc: "grey" },
+          { name: "CPU Model", desc: "Core i7" },
+          { name: "RAM Memory Installed Size", desc: "16 GB" },
+          { name: "Operating System", desc: "Windows 11 Home" },
+          { name: "Special Feature", desc: "Thin" },
+          { name: "Graphics Card Description", desc: "Dedicated" },
+          { name: "Graphics Coprocessor", desc: "NVIDIA GeForce RTX 4060" },
+        ];
+        function Spec(props) {
+          return (
+            <div class="md-spec">
+              <p>
+                <b>{props.name}</b>
+              </p>
+              <p>{props.desc}</p>
+            </div>
+          );
+        }
+        return <div id="md-specsDiv">{specs.map(Spec)}</div>;
       }
       function AboutDiv() {
-        return <div id="md-aboutDiv"></div>;
+        const abouts = [
+          "Next Gen Performance: Intel Core i7-13700HX processor Mobile Intel HM770 PCH Chipset",
+          "Internal Specifications: Dual-channel DDR5 SDRAM support 16 (2*8) GB of DDR5 system memory, Upgradable up to 32 GB of DDR5 system memory.Storage: 1 TB, PCIe Gen4, 16 Gb/s, NVMe",
+          "Display:16.0 display with IPS (In-Plane Switching) technology, WQXGA 2560 x 1600, high-brightness (500 nits) Acer ComfyView LED-backlit TFT LCD,supporting 165 Hz, Grey to Grey 3 ms by Overdrive, Nvidia Advanced Optimus capable.",
+          "Graphics: NVIDIA GeForce RTX 4060 with 8 GB of dedicated GDDR6 VRAM",
+          "Other Features: NVIDIA Advance Optimus, 5th Gen Aeroblade 3D Fan, Full Function Thunderbolt-4",
+        ];
+        function AboutItem(aboutText) {
+          return <li>{aboutText}</li>;
+        }
+        return (
+          <div id="md-aboutDiv">
+            <p>
+              <b>About this Item</b>
+            </p>
+            <ul>{abouts.map(AboutItem)}</ul>
+          </div>
+        );
       }
 
       return (
@@ -195,7 +238,7 @@ function Product() {
       <Header />
       <NavBar />
       <ProductContent />
-      {/* <ProductsList /> */}
+      <ProductsList />
       <Footer />
     </div>
   );

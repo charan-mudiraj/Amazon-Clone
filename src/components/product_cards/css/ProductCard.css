@@ -35,8 +35,9 @@
 #pc_rs,
 #pc_mrp,
 #pc_rating {
-  display: flex;
   text-align: left;
+  color: rgb(255, 174, 0);
+  font-size: 25px;
 }
 #pc_rating:hover {
   color: #f08804;

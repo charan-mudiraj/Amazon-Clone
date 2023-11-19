@@ -13,8 +13,7 @@ function ProductCard() {
           11 Home...
         </p>
         <div id="pc_rating">
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>12</p>
+          <p>★★★★✰</p>
         </div>
         <div id="pc_price">
           <p id="pc_rs_value">₹1,80,990.00</p>

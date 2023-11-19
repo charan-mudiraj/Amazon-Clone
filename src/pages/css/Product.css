@@ -3,12 +3,59 @@
 }
 #pc-md {
   display: flex;
+  margin: 20px 12px;
+}
+#p-pc ul {
+  font-family: sans-serif;
+  padding-left: 17px;
 }
 .pc-icon {
   height: 27px;
 }
+#md-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#md-details a {
+  color: #007185;
+  cursor: pointer;
+}
+#md-details a:hover {
+  text-decoration: underline;
+}
+#md-titleDiv p {
+  font-weight: bold;
+  color: rgb(39, 39, 39);
+  font-size: larger;
+}
+#md-titleDiv #rating p {
+  color: rgb(255, 174, 0);
+}
+#md-priceDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 #md-price {
   display: flex;
+  gap: 10px;
+}
+#md-priceDiv #discount {
+  color: rgba(187, 0, 0, 0.795);
+  font-size: x-large;
+}
+#md-priceDiv #md-price #value {
+  color: rgba(0, 0, 0, 0.884);
+  font-size: x-large;
+}
+#md-priceDiv #md-mrp {
+  color: rgb(88, 88, 88);
+  align-items: center;
+  font-size: 12px;
+}
+#md-priceDiv #md-mrp #value {
+  text-decoration: line-through;
 }
 #md-mrp {
   display: flex;
@@ -17,17 +64,20 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  margin-bottom: 10px;
 }
 #md-offersDiv > #cards {
   display: flex;
   gap: 10px;
   height: min-content;
 }
+#md-curr-view {
+}
 #md-curr-view img {
-  width: fit-content;
+  width: 450px;
 }
 .md-offerCard {
-  box-shadow: 0px 0px 6px 0px grey;
+  box-shadow: 0px 0px 6px 0px rgb(163, 163, 163);
   border-radius: 8px;
   padding: 10px;
   width: 100px;
@@ -38,13 +88,12 @@ a {
 }
 #md-buyCard {
   height: fit-content;
-  /* box-shadow: 0px 0px 6px 0px grey; */
   border: 1px solid rgb(202, 202, 202);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   width: 920px;
-  margin: 20px 17px 0px 20px;
+  margin: 20px 0px 0px 20px;
   padding: 15px;
   gap: 7px;
 }
@@ -72,4 +121,40 @@ a {
   border: 1px solid rgb(160, 160, 160);
   padding: 7px 0px 7px 10px;
   margin-top: 5px;
+}
+#md-iconsDiv {
+  display: flex;
+  /* justify-content: space-around; */
+  font-size: 13px;
+  text-align: center;
+  gap: 25px;
+  margin: 10px 0px;
+}
+#md-icon img {
+  height: 40px;
+}
+#md-icon {
+  width: min-content;
+}
+#md-views-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-right: 10px;
+}
+#md-view img {
+  border: 1px solid rgba(0, 0, 0, 0.534);
+  border-radius: 10px;
+  cursor: pointer;
+}
+#md-view img:hover {
+  box-shadow: 0px 0px 3px 1px #007185;
+}
+#md-specsDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#md-specsDiv .md-spec {
+  display: flex;
 }
