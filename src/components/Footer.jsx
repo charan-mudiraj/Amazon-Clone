@@ -106,7 +106,9 @@ function Language() {
   const logoPath = "icons_&_logos/logo.png";
   return (
     <div id="f-language">
-      <img src={logoPath} alt="logo" />
+      <a href="/">
+        <img src={logoPath} alt="logo" />
+      </a>
       <select id="f-lang-selector">{languages.map(LangOption)}</select>
     </div>
   );
@@ -147,13 +149,9 @@ const moaItems = [
 function MoaItem(item) {
   return (
     <div class="f-moa-item">
-      <a href="" class="f-moa-item-title">
-        {item.title}
-      </a>
+      <a class="f-moa-item-title">{item.title}</a>
       <br />
-      <a href="" class="f-moa-item-desc">
-        {item.desc}
-      </a>
+      <a class="f-moa-item-desc">{item.desc}</a>
     </div>
   );
 }
@@ -165,9 +163,9 @@ function Copyright() {
   return (
     <div id="copyright">
       <div id="copyright-links">
-        <a href="">Conditions of Use & Sale</a>
-        <a href="">Privacy Notice</a>
-        <a href="">Internet-Based Ads</a>
+        <a>Conditions of Use & Sale</a>
+        <a>Privacy Notice</a>
+        <a>Internet-Based Ads</a>
       </div>
       <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
     </div>

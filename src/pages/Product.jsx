@@ -2,29 +2,39 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import ProductsList from "../components/ProductsList.jsx";
+import React, { useState } from "react";
 import "./css/Product.css";
+import { products } from "../ProductsMetaData";
 
-function ProductContent() {
+function ProductContent(props) {
+  const product = products[props.id];
+  let [mainImgId, setMainImgId] = useState(1);
+  let [mainImgVisible, setMainImgVisible] = useState(true);
   function MainDiv() {
     function Views() {
-      const dir = "temp_product/thumbnails/";
-      const views = [];
-      for (let i = 1; i <= 6; i++) {
-        views.push(dir + i + ".jpg");
+      const dir = "products_images/" + product.id + "/";
+      const views = [1, 2, 3, 4, 5, 6];
+      function updateMainView(event) {
+        let id = event.target.getAttribute("itemID");
+        if (id != null) {
+          console.log(id);
+          setMainImgId(Number(id));
+        }
       }
-      function View(href) {
+      function View(imgNo) {
         return (
-          <div id="md-view">
-            <img src={href} alt="" />
+          <div id="md-view" onMouseOver={updateMainView} itemID={imgNo}>
+            <img src={dir + imgNo + ".jpg"} alt="" />
           </div>
         );
       }
       return <div id="md-views-flex">{views.map(View)}</div>;
     }
-    function MainView(props) {
+    function MainView() {
+      let imgPath = "products_images/" + product.id + "/" + mainImgId + ".jpg";
       return (
         <div id="md-curr-view">
-          <img src={props.href} alt="" />
+          <img src={imgPath} alt="" />
         </div>
       );
     }
@@ -32,15 +42,10 @@ function ProductContent() {
       function TitleDiv() {
         return (
           <div id="md-titleDiv">
-            <p>
-              Acer Predator Helios 16 Gaming Laptop | 13th Gen Intel Core
-              i7-13700HX | NVIDIA GeForce RTX 4060 | 16" 2560 x 1600 165Hz
-              G-SYNC Display | 16GB DDR5 | 1TB Gen 4 SSD | Killer Wi-Fi 6E |
-              PH16-71-74UU
-            </p>
+            <p>{product.title}</p>
             <a>Visit the Acer Store</a>
             <div id="rating">
-              <p>★★★★✰</p>
+              <p>{product.rating}</p>
             </div>
           </div>
         );
@@ -49,17 +54,17 @@ function ProductContent() {
         return (
           <div id="md-priceDiv">
             <div id="md-price">
-              <p id="discount">-11%</p>
-              <p id="value">₹1,80,990.00</p>
+              <p id="discount">-{product.discount}</p>
+              <p id="value">₹{product.price}</p>
             </div>
             <div id="md-mrp">
               <p id="text">M.R.P.: </p>
-              <p id="value">₹2,07,999.00</p>
+              <p id="value">₹{product.mrp}</p>
             </div>
             <div id="md-emi-options">
               <p>Inclusive of all taxes</p>
               <p>
-                <b>EMI </b>starts at ₹6,885.
+                <b>EMI </b>starts at ₹{product.EMI}.
                 <br /> No Cost Emi available <a>EMI options</a>
               </p>
             </div>
@@ -128,38 +133,19 @@ function ProductContent() {
         return <div id="md-iconsDiv">{icons.map(Icon)}</div>;
       }
       function SpecsDiv() {
-        const specs = [
-          { name: "Brand", desc: "Acer" },
-          { name: "Model Name", desc: "Predator Helios 16" },
-          { name: "Screen Size", desc: "16 Inches" },
-          { name: "Colour", desc: "grey" },
-          { name: "CPU Model", desc: "Core i7" },
-          { name: "RAM Memory Installed Size", desc: "16 GB" },
-          { name: "Operating System", desc: "Windows 11 Home" },
-          { name: "Special Feature", desc: "Thin" },
-          { name: "Graphics Card Description", desc: "Dedicated" },
-          { name: "Graphics Coprocessor", desc: "NVIDIA GeForce RTX 4060" },
-        ];
-        function Spec(props) {
+        function Spec(spec) {
           return (
             <div class="md-spec">
               <p>
-                <b>{props.name}</b>
+                <b>{spec.title}</b>
               </p>
-              <p>{props.desc}</p>
+              <p>{spec.desc}</p>
             </div>
           );
         }
-        return <div id="md-specsDiv">{specs.map(Spec)}</div>;
+        return <div id="md-specsDiv">{product.specs.map(Spec)}</div>;
       }
       function AboutDiv() {
-        const abouts = [
-          "Next Gen Performance: Intel Core i7-13700HX processor Mobile Intel HM770 PCH Chipset",
-          "Internal Specifications: Dual-channel DDR5 SDRAM support 16 (2*8) GB of DDR5 system memory, Upgradable up to 32 GB of DDR5 system memory.Storage: 1 TB, PCIe Gen4, 16 Gb/s, NVMe",
-          "Display:16.0 display with IPS (In-Plane Switching) technology, WQXGA 2560 x 1600, high-brightness (500 nits) Acer ComfyView LED-backlit TFT LCD,supporting 165 Hz, Grey to Grey 3 ms by Overdrive, Nvidia Advanced Optimus capable.",
-          "Graphics: NVIDIA GeForce RTX 4060 with 8 GB of dedicated GDDR6 VRAM",
-          "Other Features: NVIDIA Advance Optimus, 5th Gen Aeroblade 3D Fan, Full Function Thunderbolt-4",
-        ];
         function AboutItem(aboutText) {
           return <li>{aboutText}</li>;
         }
@@ -168,7 +154,7 @@ function ProductContent() {
             <p>
               <b>About this Item</b>
             </p>
-            <ul>{abouts.map(AboutItem)}</ul>
+            <ul>{product.about.map(AboutItem)}</ul>
           </div>
         );
       }
@@ -193,7 +179,7 @@ function ProductContent() {
       return (
         <div id="md-buyCard">
           <p>
-            Delivery by <b>Friday, 24 November</b>
+            Delivery by <b>{product.delivery_day}</b>
           </p>
           <p style={{ color: "green" }}>
             <b>In Stock</b>
@@ -228,16 +214,17 @@ function ProductContent() {
   return (
     <div id="p-pc">
       <MainDiv />
+      <hr />
       <ReviewsDiv />
     </div>
   );
 }
-function Product() {
+function Product(props) {
   return (
     <div id="product">
       <Header />
       <NavBar />
-      <ProductContent />
+      <ProductContent id={props.id} />
       <ProductsList />
       <Footer />
     </div>

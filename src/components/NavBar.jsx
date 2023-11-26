@@ -108,7 +108,7 @@ function AllSlider(props) {
 }
 function NavigatorItem(item) {
   return (
-    <a href={item.link} class="navLink">
+    <a class="navLink">
       <div class="navItem">
         <p id={item.id}>{item.title}</p>
       </div>

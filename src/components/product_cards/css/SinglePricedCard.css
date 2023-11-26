@@ -10,8 +10,12 @@
 .spc_productImage {
   background-color: #f7f7f7;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #spc_img {
+  max-height: 220px;
 }
 
 #spc a {

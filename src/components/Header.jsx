@@ -3,10 +3,12 @@ import "./css/Header.css";
 function Logo() {
   let iconPath = "icons_&_logos/logo.png";
   return (
-    <div id="logo" class="component">
-      <img src={iconPath} alt="Amazon Logo" id="logoImage" />
-      <p id="in">.in</p>
-    </div>
+    <a href="/" id="logoDiv">
+      <div id="logo" class="component">
+        <img src={iconPath} alt="Amazon Logo" id="logoImage" />
+        <p id="in">.in</p>
+      </div>
+    </a>
   );
 }
 function Location() {
@@ -72,33 +74,10 @@ function SearchBar() {
 }
 function LanguageSelector() {
   const flagPath = "icons_&_logos/flag.png";
-  const languages = [
-    { name: "English", code: "EN" },
-    { name: "हिन्दी", code: "HI" },
-    { name: "தமிழ்", code: "TA" },
-    { name: "తెలుగు", code: "TE" },
-    { name: "ಕನ್ನಡ", code: "KN" },
-    { name: "മലയാളം", code: "ML" },
-    { name: "বাংলা", code: "BM" },
-    { name: "मराठी", code: "MR" },
-  ];
-  function LangOption(lang) {
-    return (
-      <option class="h-lang-option">
-        <div>
-          <input type="radio" />
-          <p>
-            {lang.name} - {lang.code}
-          </p>
-        </div>
-      </option>
-    );
-  }
   return (
     <div id="h-lang" class="component">
       <img src={flagPath} alt="flag" />
       <p>EN</p>
-      <input list="browsers"></input>
       <datalist id="browsers">
         <option>avds</option>
         <option>sadsfs</option>
@@ -106,9 +85,29 @@ function LanguageSelector() {
     </div>
   );
 }
-function AccountAndLists() {}
-function ReturnsAndOrders() {}
-function Cart() {}
+function DevelopersCommunity() {
+  const leftIconPath = "icons_&_logos/left.png";
+  const rightIconPath = "icons_&_logos/right.png";
+  return (
+    <a id="dev-comm" class="component" href="/about">
+      <img src={leftIconPath} alt="" />
+      <div>
+        <span class="thin">About</span>
+        <p class="bold">Developer</p>
+      </div>
+      <img src={rightIconPath} alt="" />
+    </a>
+  );
+}
+function Cart() {
+  let iconPath = "icons_&_logos/cart.jpg";
+  return (
+    <div id="cart" class="component">
+      <img src={iconPath} alt="" />
+      <p class="bold">Cart</p>
+    </div>
+  );
+}
 function Header() {
   return (
     <div id="header">
@@ -116,8 +115,7 @@ function Header() {
       <Location />
       <SearchBar />
       <LanguageSelector />
-      <AccountAndLists />
-      <ReturnsAndOrders />
+      <DevelopersCommunity />
       <Cart />
     </div>
   );

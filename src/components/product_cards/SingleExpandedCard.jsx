@@ -1,10 +1,10 @@
 import "./css/SingleExpandedCard.css";
 
 function SingleExpandedCard() {
-  const imagePath = "products_images/6.jpg";
+  const imagePath = "other_images/sec.jpg";
   return (
     <div id="sec">
-      <a href="">
+      <a>
         <div class="sec_productImage">
           <img src={imagePath} alt="" id="sec_img" />
         </div>

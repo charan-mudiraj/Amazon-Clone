@@ -38,6 +38,7 @@
   text-decoration: none;
   font-size: 13px;
   color: #007185;
+  cursor: pointer;
 }
 #mc > a:hover {
   text-decoration: underline;

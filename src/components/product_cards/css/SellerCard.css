@@ -1,0 +1,32 @@
+#seller-card {
+  background-color: white;
+  height: fit-content;
+  width: max-content;
+  padding: 20px;
+  box-shadow: none;
+  margin: 25px;
+  box-shadow: 0px 0px 7px 0px grey;
+  display: flex;
+}
+#seller-card img {
+  height: 90px;
+  margin-left: 20px;
+}
+#seller-c-text {
+  font-size: 23px;
+  color: black;
+  padding-bottom: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#seller-c-text a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #007185;
+  cursor: pointer;
+}
+#seller-c-text a:hover {
+  text-decoration: underline;
+  color: #f08804;
+}

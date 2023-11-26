@@ -4,14 +4,15 @@ import MultipleCard from "../components/product_cards/MultipleCard";
 import SingleCard from "../components/product_cards/SingleCard";
 import SingleExpandedCard from "../components/product_cards/SingleExpandedCard";
 import SinglePricedCard from "../components/product_cards/SinglePricedCard";
-import ProductCard from "../components/product_cards/ProductCard";
+import ProductCard from "../components/product_cards/SellerCard";
 import ProductsList from "../components/ProductsList";
 import "./css/Home.css";
 import { useState } from "react";
 import Footer from "../components/Footer";
+import SellerCard from "../components/product_cards/SellerCard";
 
-function BannerImage() {
-  const bannerPath = "other_images/banner1.jpg";
+function BannerImage(num) {
+  const bannerPath = "other_images/banner" + num + ".jpg";
   return <img src={bannerPath} alt="banner" class="banner-image" />;
 }
 function BannerBtn(props) {
@@ -46,14 +47,15 @@ function BannerSlider() {
     }
   }
   function scrollRight() {
-    setScrollPosition(scrollPosition + 1);
+    if (scrollPosition < 5) {
+      setScrollPosition(scrollPosition + 1);
+    }
   }
+  const bannerNums = [1, 2, 3, 4, 5, 6];
   return (
     <div id="banner-slider">
       <div id="banner-flex" style={bannerTransitionStyle}>
-        <BannerImage />
-        <BannerImage />
-        <BannerImage />
+        {bannerNums.map(BannerImage)}
       </div>
       <div id="banner-gradient"></div>
       <BannerBtn direction="left" onClick={scrollLeft} />
@@ -64,16 +66,21 @@ function BannerSlider() {
 
 function Home() {
   return (
-    <div>
+    <div id="home">
       <Header />
       <NavBar />
       <BannerSlider />
-      <MultipleCard />
-      <SingleCard />
-      <SingleExpandedCard />
-      <SinglePricedCard />
-      <ProductsList />
-      <Footer />
+      <div id="home-content">
+        <div id="flex-row">
+          <MultipleCard />
+          <SingleCard />
+          <SinglePricedCard />
+          <SellerCard />
+        </div>
+        <SingleExpandedCard />
+        <ProductsList />
+        <Footer />
+      </div>
     </div>
   );
 }

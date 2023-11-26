@@ -1,10 +1,13 @@
 import "./css/ProductsList.css";
 import ProductCard from "../components/product_cards/ProductCard";
 import { useState } from "react";
+import { products, generateRandomArray } from "../ProductsMetaData";
+
+const productsIds = generateRandomArray(10, 9);
 
 function ScrollBtn(props) {
-  const leftPath = "products_images/left.png";
-  const rightPath = "products_images/right.png";
+  const leftPath = "icons_&_logos/left.png";
+  const rightPath = "icons_&_logos/right.png";
   return (
     <button class="scrollBtn" id={props.direction} onClick={props.onClick}>
       <img src={props.direction == "left" ? leftPath : rightPath} />
@@ -20,7 +23,13 @@ function ProductsList() {
     }
   }
   function scrollRight() {
-    setScrollPosition(scrollPosition + 1);
+    if (scrollPosition < 1) {
+      setScrollPosition(scrollPosition + 1);
+    }
+  }
+  function Product(id) {
+    const product = products[id];
+    return <ProductCard content={product} />;
   }
   const plScrollStyle = {
     transform: "translate(" + -(scrollPosition * (218 + 18) * 5) + "px)",
@@ -30,17 +39,7 @@ function ProductsList() {
     <div id="productsListExpanded">
       <div id="productsListDiv">
         <div id="productsList" style={plScrollStyle}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {productsIds.map(Product)}
         </div>
       </div>
       <div id="pl_left_scrollBtn_div">

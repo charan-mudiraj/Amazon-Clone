@@ -107,10 +107,12 @@
 .f-moa-item-title {
   color: white;
   font-size: smaller;
+  cursor: pointer;
 }
 .f-moa-item-desc {
   color: grey;
   font-size: smaller;
+  cursor: pointer;
 }
 .f-moa-item a {
   text-decoration: none;
@@ -132,6 +134,7 @@
 #copyright-links a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 #copyright-links a:hover {
   text-decoration: underline;

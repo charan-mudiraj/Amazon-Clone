@@ -30,7 +30,11 @@
   background-color: #131921;
   padding: 5px 15px;
   align-items: center;
+  justify-content: space-around;
   height: 50px;
+}
+#header #logoDiv {
+  text-decoration: none;
 }
 #logo {
   display: flex;
@@ -58,6 +62,7 @@
   display: flex;
   outline: 2px solid transparent;
   transition: border 0.3s;
+  flex-grow: 1;
 }
 .searchBarComponent {
   height: 42px;
@@ -66,12 +71,13 @@
   width: 115px;
   background-color: #e6e6e6;
   border-radius: 4px 0px 0px 4px;
+  cursor: pointer;
 }
 #searchFilter:focus {
   outline: none;
 }
 #searchBar {
-  width: 480px;
+  width: 100%;
 }
 #searchbar:focus {
   outline: none;
@@ -83,6 +89,7 @@
 }
 #searchBarCenter {
   cursor: pointer;
+  width: 100%;
 }
 #searchBarCenter:hover + #searchBarFlex {
   outline: 2px solid orange;
@@ -91,6 +98,7 @@
   background-color: #febd69;
   width: 40px;
   border-radius: 0px 4px 4px 0px;
+  cursor: pointer;
 }
 #searchBarRight:hover {
   outline: 2px solid orange;
@@ -120,4 +128,38 @@ option {
   width: 20px;
   background-color: transparent;
   border: none;
+}
+#dev-comm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-decoration: none;
+}
+#dev-comm span {
+  font-size: small;
+}
+#dev-comm p {
+  font-size: 17px;
+}
+#dev-comm img {
+  height: 50px;
+}
+#dev-comm div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#cart {
+  display: flex;
+  align-items: center;
+}
+#cart img {
+  height: 35px;
+}
+#cart p {
+  /* font-size: large; */
+  margin-top: auto;
+  margin-bottom: 5px;
+  margin-left: 1px;
 }

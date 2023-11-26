@@ -3,7 +3,9 @@
 }
 #pc-md {
   display: flex;
-  margin: 20px 12px;
+}
+#p-pc {
+  margin: 20px 17px;
 }
 #p-pc ul {
   font-family: sans-serif;
@@ -72,6 +74,7 @@
   height: min-content;
 }
 #md-curr-view {
+  margin-right: 13px;
 }
 #md-curr-view img {
   width: 450px;
@@ -104,6 +107,10 @@ a {
   box-shadow: 0px 0px 3px 0px rgb(197, 197, 197);
   padding: 8px 0px;
   margin-top: 10px;
+  cursor: pointer;
+}
+#add-to-cart-btn:hover {
+  background-color: #e2bf0f;
 }
 #buy-now-btn {
   background-color: #ffa41c;
@@ -112,6 +119,10 @@ a {
   box-shadow: 0px 0px 3px 0px rgb(197, 197, 197);
   padding: 8px 0px;
   margin-bottom: 5px;
+  cursor: pointer;
+}
+#buy-now-btn:hover {
+  background-color: #e7900d;
 }
 #add-to-wish-list-btn {
   background-color: white;
@@ -121,6 +132,10 @@ a {
   border: 1px solid rgb(160, 160, 160);
   padding: 7px 0px 7px 10px;
   margin-top: 5px;
+  cursor: pointer;
+}
+#add-to-wish-list-btn:hover {
+  background-color: rgb(241, 241, 241);
 }
 #md-iconsDiv {
   display: flex;
@@ -142,12 +157,23 @@ a {
   gap: 7px;
   padding-right: 10px;
 }
-#md-view img {
+#md-view {
+  height: 45px;
+  width: 45px;
   border: 1px solid rgba(0, 0, 0, 0.534);
-  border-radius: 10px;
   cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#md-view img:hover {
+#md-view img {
+  height: 100%;
+  width: max-content;
+  max-width: 100%;
+  border-radius: inherit;
+}
+#md-view:hover {
   box-shadow: 0px 0px 3px 1px #007185;
 }
 #md-specsDiv {
@@ -157,4 +183,13 @@ a {
 }
 #md-specsDiv .md-spec {
   display: flex;
+  gap: 10px;
+}
+#md-aboutDiv li {
+  margin: 7px 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+}
+#p-pc > hr {
+  margin-top: 20px;
 }
