@@ -17,7 +17,7 @@ function CartItem({ item, setCart }) {
   }
   return (
     <>
-      <div class="cart-item" id={item.id} key={item.id}>
+      <div className="cart-item" id={item.id} key={item.id}>
         <a href={"/product-id=" + item.id}>
           <img src={imgPath} alt="" />
         </a>
@@ -65,8 +65,8 @@ function CartContent() {
   function AllItemsList() {
     return (
       <>
-        {cart.map((item) => (
-          <CartItem item={item} setCart={setCart} />
+        {cart.map((item, index) => (
+          <CartItem item={item} setCart={setCart} key={index} />
         ))}
         <p style={{ textAlign: "end", marginTop: "10px", fontSize: "20px" }}>
           Subtotal ({cart.length} items): ₹

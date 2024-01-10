@@ -22,10 +22,10 @@ function AboutContent() {
       link: "https://wa.me/qr/H67AUKBDVVBUO1",
     },
   ];
-  function Icon(props) {
+  function Icon({ icon }) {
     return (
-      <a id="social-icon" href={props.link}>
-        <img src={props.imgPath} alt="" />
+      <a id="social-icon" href={icon.link}>
+        <img src={icon.imgPath} alt="" />
       </a>
     );
   }
@@ -38,7 +38,11 @@ function AboutContent() {
         <p>Admin</p>
         <p>Charan M</p>
         <hr />
-        <div id="ac-icons-flex">{icons.map(Icon)}</div>
+        <div id="ac-icons-flex">
+          {icons.map((icon, index) => (
+            <Icon icon={icon} key={index} />
+          ))}
+        </div>
       </div>
     </div>
   );

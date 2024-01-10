@@ -13,10 +13,12 @@ function SliderDiv(props) {
   };
   const sliderContents = [
     {
+      id: 1,
       title: "Trending",
       items: ["Best Sellers", "New Releases", "Movers and Shakers"],
     },
     {
+      id: 2,
       title: "Digital Content And Devices",
       items: [
         "Echo & Alexa",
@@ -28,6 +30,7 @@ function SliderDiv(props) {
       ],
     },
     {
+      id: 3,
       title: "Shop By Category",
       items: [
         "Mobiles, Computers",
@@ -38,20 +41,24 @@ function SliderDiv(props) {
       ],
     },
     {
+      id: 4,
       title: "Programs & Features",
       items: ["Amazon Launchpad", "Handloom and Handicrafts", "See All"],
     },
     {
+      id: 5,
       title: "Help & Settings",
       items: ["Your Account", "Customer Service", "Sign Out"],
     },
   ];
-  function SliderContent(content) {
+  function SliderContent({ content }) {
     return (
-      <div class="nb-slider-content">
-        <p class="nb-slider-content-title">{content.title}</p>
-        {content.items.map((item) => (
-          <p class="nb-slider-content-item">{item}</p>
+      <div className="nb-slider-content">
+        <p className="nb-slider-content-title">{content.title}</p>
+        {content.items.map((item, index) => (
+          <p className="nb-slider-content-item" key={index}>
+            {item}
+          </p>
         ))}
         <hr />
       </div>
@@ -64,7 +71,11 @@ function SliderDiv(props) {
           <img src={userIconPath} alt="user" />
           <p>Hello, Charan</p>
         </div>
-        <div id="nb-slider-contents">{sliderContents.map(SliderContent)}</div>
+        <div id="nb-slider-contents">
+          {sliderContents.map((content) => (
+            <SliderContent content={content} key={content.id} />
+          ))}
+        </div>
       </div>
       <button
         id="nb-sliderDiv-closeBtn"
@@ -98,8 +109,8 @@ function AllSlider(props) {
 }
 function NavigatorItem({ item, onClick }) {
   return (
-    <a class="navLink" onClick={onClick}>
-      <div class="navItem">
+    <a className="navLink" onClick={onClick}>
+      <div className="navItem">
         <p id={item.id}>{item.name}</p>
       </div>
     </a>
@@ -131,6 +142,7 @@ function NavBar() {
       {navigatingItems.map((item) => (
         <NavigatorItem
           item={item}
+          key={item.id}
           onClick={() => searchByCategory(item.name)}
         />
       ))}

@@ -71,8 +71,8 @@ export default function SearchedProducts() {
           </p>
         </div>
         <div id="sp-list">
-          {searchResults.map((product) => (
-            <ProductBox content={product} />
+          {searchResults.map((product, index) => (
+            <ProductBox content={product} key={index} />
           ))}
         </div>
       </div>

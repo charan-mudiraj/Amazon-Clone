@@ -5,7 +5,7 @@ function SingleCard() {
   return (
     <div id="sc">
       <p id="sc_cardTitle">Up to 40% off | Deals on mobiles & accessories</p>
-      <div class="sc_productImage">
+      <div className="sc_productImage">
         <img src={imagePath} alt="" id="sc_img" />
       </div>
       <a>see all offers</a>

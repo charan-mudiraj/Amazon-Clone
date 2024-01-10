@@ -8,9 +8,9 @@ function ProductCard(props) {
     return shortTitle;
   }
   return (
-    <a href={"/product-id=" + product.id} className="pc_link">
+    <a href={"/product?id=" + product.id} className="pc_link">
       <div id="pc">
-        <button class="pc_product_image">
+        <button className="pc_product_image">
           <img src={imagePath} alt={product.name} id="pc_img" />
         </button>
         <p id="pc_product_title">{titleShortener(product.title)}</p>

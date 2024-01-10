@@ -5,6 +5,7 @@ import ProductsList from "../components/ProductsList.jsx";
 import React, { useState } from "react";
 import "./css/Product.css";
 import { products } from "../ProductsMetaData";
+import { useSearchParams } from "react-router-dom";
 
 function ProductContent(props) {
   const product = products[props.id];
@@ -20,14 +21,20 @@ function ProductContent(props) {
           setMainImgId(Number(event.target.id));
         }
       }
-      function View(imgNo) {
+      function View({ imgNo }) {
         return (
           <div id={imgNo} onMouseOver={updateMainView} className="md-view">
             <img src={dir + imgNo + ".jpg"} alt="" />
           </div>
         );
       }
-      return <div id="md-views-flex">{views.map(View)}</div>;
+      return (
+        <div id="md-views-flex">
+          {views.map((view, index) => (
+            <View imgNo={view} key={index} />
+          ))}
+        </div>
+      );
     }
     function MainView() {
       let imgPath = "products_images/" + product.id + "/" + mainImgId + ".jpg";
@@ -89,24 +96,28 @@ function ProductContent(props) {
             offerCount: 1,
           },
         ];
-        function OfferCard(props) {
+        function OfferCard({ offer }) {
           return (
-            <div class="md-offerCard">
+            <div className="md-offerCard">
               <p>
-                <b>{props.title}</b>
+                <b>{offer.title}</b>
               </p>
-              <p>{props.desc}</p>
-              <a>{props.offerCount} offers</a>
+              <p>{offer.desc}</p>
+              <a>{offer.offerCount} offers</a>
             </div>
           );
         }
         return (
           <div id="md-offersDiv">
             <div id="title">
-              <img src={iconPath} alt="" class="pc-icon" />
+              <img src={iconPath} alt="" className="pc-icon" />
               <p>Offers</p>
             </div>
-            <div id="cards">{offers.map(OfferCard)}</div>
+            <div id="cards">
+              {offers.map((offer, index) => (
+                <OfferCard offer={offer} key={index} />
+              ))}
+            </div>
           </div>
         );
       }
@@ -121,20 +132,26 @@ function ProductContent(props) {
             name: "Amazon Delivered",
           },
         ];
-        function Icon(props) {
+        function Icon({ icon }) {
           return (
             <div id="md-icon">
-              <img src={props.href} alt="" />
-              <p>{props.name}</p>
+              <img src={icon.href} alt="" />
+              <p>{icon.name}</p>
             </div>
           );
         }
-        return <div id="md-iconsDiv">{icons.map(Icon)}</div>;
+        return (
+          <div id="md-iconsDiv">
+            {icons.map((icon, index) => (
+              <Icon icon={icon} key={index} />
+            ))}
+          </div>
+        );
       }
       function SpecsDiv() {
         function Spec(spec) {
           return (
-            <div class="md-spec">
+            <div className="md-spec">
               <p>
                 <b>{spec.title}</b>
               </p>
@@ -142,10 +159,16 @@ function ProductContent(props) {
             </div>
           );
         }
-        return <div id="md-specsDiv">{product.specs.map(Spec)}</div>;
+        return (
+          <div id="md-specsDiv">
+            {product.specs.map((spec, index) => (
+              <Spec spec={spec} key={index} />
+            ))}
+          </div>
+        );
       }
       function AboutDiv() {
-        function AboutItem(aboutText) {
+        function AboutItem({ aboutText }) {
           return <li>{aboutText}</li>;
         }
         return (
@@ -153,7 +176,11 @@ function ProductContent(props) {
             <p>
               <b>About this Item</b>
             </p>
-            <ul>{product.about.map(AboutItem)}</ul>
+            <ul>
+              {product.about.map((aboutText, index) => (
+                <AboutItem aboutText={aboutText} key={index} />
+              ))}
+            </ul>
           </div>
         );
       }
@@ -247,7 +274,9 @@ function ProductContent(props) {
     </div>
   );
 }
-function Product({ id }) {
+function Product() {
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get("id");
   return (
     <div id="product">
       <Header />

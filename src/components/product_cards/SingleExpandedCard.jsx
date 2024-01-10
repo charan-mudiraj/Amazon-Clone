@@ -5,7 +5,7 @@ function SingleExpandedCard() {
   return (
     <div id="sec">
       <a>
-        <div class="sec_productImage">
+        <div className="sec_productImage">
           <img src={imagePath} alt="" id="sec_img" />
         </div>
       </a>

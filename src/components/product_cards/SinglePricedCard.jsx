@@ -2,7 +2,7 @@ import "./css/SinglePricedCard.css";
 import { products, generateRandomArray } from "../../ProductsMetaData";
 
 const products_path = "products_images/";
-const productId = generateRandomArray(1, 9)[0];
+const productId = generateRandomArray(1, products.length - 1)[0];
 
 function SinglePricedCard() {
   const imagePath = products_path + productId + "/1.jpg";
@@ -13,8 +13,8 @@ function SinglePricedCard() {
   }
   return (
     <div id="spc">
-      <a href={"/product-id=" + productId}>
-        <div class="spc_productImage">
+      <a href={"/product?id=" + productId}>
+        <div className="spc_productImage">
           <img src={imagePath} alt="" id="spc_img" />
         </div>
         <div id="spc_price">

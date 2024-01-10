@@ -10,15 +10,15 @@ import { useState } from "react";
 import Footer from "../components/Footer";
 import SellerCard from "../components/product_cards/SellerCard";
 
-function BannerImage(num) {
+function BannerImage({ num }) {
   const bannerPath = "other_images/banner" + num + ".jpg";
-  return <img src={bannerPath} alt="banner" class="banner-image" />;
+  return <img src={bannerPath} alt="banner" className="banner-image" />;
 }
 function BannerBtn(props) {
   const leftArrow = "<";
   const rightArrow = ">";
   return (
-    <button class="banner-btn" id={props.direction} onClick={props.onClick}>
+    <button className="banner-btn" id={props.direction} onClick={props.onClick}>
       <p>{props.direction == "left" ? leftArrow : rightArrow}</p>
     </button>
   );
@@ -54,7 +54,9 @@ function BannerSlider() {
   return (
     <div id="banner-slider">
       <div id="banner-flex" style={bannerTransitionStyle}>
-        {bannerNums.map(BannerImage)}
+        {bannerNums.map((num) => (
+          <BannerImage num={num} key={num} />
+        ))}
       </div>
       <div id="banner-gradient"></div>
       <BannerBtn direction="left" onClick={scrollLeft} />

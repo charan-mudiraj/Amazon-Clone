@@ -3,13 +3,13 @@ import ProductCard from "../components/product_cards/ProductCard";
 import { useState } from "react";
 import { products, generateRandomArray } from "../ProductsMetaData";
 
-const productsIds = generateRandomArray(10, 9);
+const productsIds = generateRandomArray(products.length, products.length - 1);
 
 function ScrollBtn(props) {
   const leftPath = "icons_&_logos/left.png";
   const rightPath = "icons_&_logos/right.png";
   return (
-    <button class="scrollBtn" id={props.direction} onClick={props.onClick}>
+    <button className="scrollBtn" id={props.direction} onClick={props.onClick}>
       <img src={props.direction == "left" ? leftPath : rightPath} />
     </button>
   );
@@ -23,11 +23,11 @@ function ProductsList() {
     }
   }
   function scrollRight() {
-    if (scrollPosition < 1) {
+    if (scrollPosition < 2) {
       setScrollPosition(scrollPosition + 1);
     }
   }
-  function Product(id) {
+  function Product({ id }) {
     const product = products[id];
     return <ProductCard content={product} />;
   }
@@ -39,7 +39,9 @@ function ProductsList() {
     <div id="productsListExpanded">
       <div id="productsListDiv">
         <div id="productsList" style={plScrollStyle}>
-          {productsIds.map(Product)}
+          {productsIds.map((id) => (
+            <Product id={id} key={id} />
+          ))}
         </div>
       </div>
       <div id="pl_left_scrollBtn_div">

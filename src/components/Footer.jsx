@@ -46,17 +46,25 @@ const accessibilities = [
   },
 ];
 function Accessibility() {
-  function AccessList(access) {
+  function AccessList({ access }) {
     return (
       <div id="f-access-list">
-        <p class="f-access-list-title">{access.title}</p>
-        {access.items.map((item) => (
-          <p class="f-access-list-item">{item}</p>
+        <p className="f-access-list-title">{access.title}</p>
+        {access.items.map((item, index) => (
+          <p className="f-access-list-item" key={index}>
+            {item}
+          </p>
         ))}
       </div>
     );
   }
-  return <div id="f-access">{accessibilities.map(AccessList)}</div>;
+  return (
+    <div id="f-access">
+      {accessibilities.map((access, index) => (
+        <AccessList access={access} key={index} />
+      ))}
+    </div>
+  );
 }
 //====================================== Accessibility ==================================
 
@@ -91,15 +99,10 @@ const languages = [
   { name: "मराठी", code: "MR" },
 ];
 function Language() {
-  function LangOption(lang) {
+  function LangOption({ lang }) {
     return (
-      <option class="f-lang-option">
-        <div>
-          <input type="radio" />
-          <p>
-            {lang.name} - {lang.code}
-          </p>
-        </div>
+      <option className="f-lang-option" value={lang.code}>
+        {lang.name} - {lang.code}
       </option>
     );
   }
@@ -109,15 +112,19 @@ function Language() {
       <a href="/">
         <img src={logoPath} alt="logo" />
       </a>
-      <select id="f-lang-selector">{languages.map(LangOption)}</select>
+      <select id="f-lang-selector">
+        {languages.map((lang, index) => (
+          <LangOption lang={lang} key={index} />
+        ))}
+      </select>
     </div>
   );
 }
 function DNSCountry() {
   return (
     <div id="f-dns-links">
-      {dnsCountries.map((country) => (
-        <p>{country}</p>
+      {dnsCountries.map((country, index) => (
+        <p key={index}>{country}</p>
       ))}
     </div>
   );
@@ -148,16 +155,22 @@ const moaItems = [
 ];
 function MoaItem(item) {
   return (
-    <div class="f-moa-item">
-      <a class="f-moa-item-title">{item.title}</a>
+    <div className="f-moa-item">
+      <a className="f-moa-item-title">{item.title}</a>
       <br />
-      <a class="f-moa-item-desc">{item.desc}</a>
+      <a className="f-moa-item-desc">{item.desc}</a>
     </div>
   );
 }
 function MoreOnAmazon() {
   //moa
-  return <div id="moa-list-grid">{moaItems.map(MoaItem)}</div>;
+  return (
+    <div id="moa-list-grid">
+      {moaItems.map((item, index) => (
+        <MoaItem item={item} key={index} />
+      ))}
+    </div>
+  );
 }
 function Copyright() {
   return (
