@@ -1,4 +1,6 @@
 import "./css/Header.css";
+import { products, productsCategories } from "../ProductsMetaData";
+import { useNavigate } from "react-router-dom";
 
 function Logo() {
   let iconPath = "icons_&_logos/logo.png";
@@ -11,48 +13,48 @@ function Logo() {
     </a>
   );
 }
-function Location() {
-  let iconPath = "icons_&_logos/location.png";
-
-  return (
-    <div id="location" class="component">
-      <img src={iconPath} alt="" id="locationIcon" />
-      <span class="thin">Deliver to Hyderabad</span>
-      <p class="bold">Update location</p>
-    </div>
-  );
-}
 function SearchBar() {
+  const navigate = useNavigate();
   let iconPath = "icons_&_logos/search.png";
-  const searchFilterOptions = [
-    { title: "All Categories", value: "all" },
-    { title: "Alexa Skills", value: "skills" },
-    { title: "Amazon Fashion", value: "fashion" },
-    { title: "Amazon Fresh", value: "fresh" },
-    { title: "Amazon Pharmacy", value: "pharmacy" },
-    { title: "Appliances", value: "appliances" },
-    { title: "Beauty", value: "beauty" },
-  ];
-  function SearchFilterOption(option) {
+  function SearchFilterOption(category) {
+    return <option>{category.name}</option>;
+  }
+  function searchRequest() {
+    const category = document.getElementById("searchFilter").value;
+    const text = document.getElementById("searchBar").value;
+    const maxPrice = document.getElementById("priceFilter").value;
+    navigate("/searchedProducts", {
+      state: { category: category, text: text, maxPrice: maxPrice },
+    });
+    window.location.reload();
+  }
+  function CategorySelector() {
     return (
-      <option value={option.value}>
-        <p>{option.title}</p>
-      </option>
+      <select id="searchFilter" class="searchBarComponent">
+        <option>All</option>
+        {productsCategories.map(SearchFilterOption)}
+      </select>
     );
   }
-  function SearchRequest() {
-    console.log("search Request");
+  function PriceRangeSelector() {
+    const priceRanges = [200000, 100000, 50000, 25000, 10000, 5000];
+    return (
+      <select id="priceFilter" class="searchBarComponent">
+        {priceRanges.map((price) => (
+          <option value={price}>Under {price}</option>
+        ))}
+      </select>
+    );
+  }
+  function handleKeyPress(e) {
+    if (e.key === "Enter") {
+      searchRequest();
+    }
   }
   return (
-    <form action="" id="searchBarFlex">
+    <div action="" id="searchBarFlex">
       <div id="searchBarLeft">
-        <select
-          name="search filter"
-          id="searchFilter"
-          class="searchBarComponent"
-        >
-          {searchFilterOptions.map(SearchFilterOption)}
-        </select>
+        <CategorySelector />
       </div>
       <div id="searchBarCenter">
         <input
@@ -60,28 +62,16 @@ function SearchBar() {
           placeholder="Search Amazon.in"
           id="searchBar"
           class="searchBarComponent"
+          onKeyDown={handleKeyPress}
         />
       </div>
-      <div
-        id="searchBarRight"
-        class="searchBarComponent"
-        onClick={SearchRequest}
-      >
-        <img src={iconPath} alt="" id="searchIcon" />
+
+      <div id="searchBarRight">
+        <PriceRangeSelector />
+        <div class="searchBarComponent" onClick={searchRequest}>
+          <img src={iconPath} alt="" id="searchIcon" />
+        </div>
       </div>
-    </form>
-  );
-}
-function LanguageSelector() {
-  const flagPath = "icons_&_logos/flag.png";
-  return (
-    <div id="h-lang" class="component">
-      <img src={flagPath} alt="flag" />
-      <p>EN</p>
-      <datalist id="browsers">
-        <option>avds</option>
-        <option>sadsfs</option>
-      </datalist>
     </div>
   );
 }
@@ -101,20 +91,25 @@ function DevelopersCommunity() {
 }
 function Cart() {
   let iconPath = "icons_&_logos/cart.jpg";
+  const cart = JSON.parse(window.localStorage.getItem("amazon-cart"));
   return (
-    <div id="cart" class="component">
-      <img src={iconPath} alt="" />
+    <a id="cart" class="component" href="/cart">
+      <div>
+        <p id="cart-number" style={{ color: "orange" }}>
+          {cart ? cart.length : 0}
+        </p>
+        <img src={iconPath} alt="" />
+      </div>
+
       <p class="bold">Cart</p>
-    </div>
+    </a>
   );
 }
 function Header() {
   return (
     <div id="header">
       <Logo />
-      <Location />
       <SearchBar />
-      <LanguageSelector />
       <DevelopersCommunity />
       <Cart />
     </div>

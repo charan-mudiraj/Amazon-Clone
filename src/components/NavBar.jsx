@@ -1,19 +1,9 @@
 import "./css/NavBar.css";
 import { useState } from "react";
+import { productsCategories } from "../ProductsMetaData";
+import { useNavigate } from "react-router-dom";
 
-const navigatingItems = [
-  { id: 1, title: "Fresh", link: "" },
-  { id: 2, title: "Amazon miniTV", link: "" },
-  { id: 3, title: "Sell", link: "" },
-  { id: 4, title: "Gift Cards", link: "" },
-  { id: 5, title: "Buy Again", link: "" },
-  { id: 6, title: "Coupons", link: "" },
-  { id: 7, title: "Amazon Basics", link: "" },
-  { id: 8, title: "Grocery & Gourment", link: "" },
-  { id: 9, title: "Health", link: "" },
-  { id: 10, title: "Household", link: "" },
-  { id: 11, title: "Personal Care", link: "" },
-];
+const navigatingItems = productsCategories;
 
 function SliderDiv(props) {
   const userIconPath = "icons_&_logos/user.png";
@@ -106,11 +96,11 @@ function AllSlider(props) {
     </button>
   );
 }
-function NavigatorItem(item) {
+function NavigatorItem({ item, onClick }) {
   return (
-    <a class="navLink">
+    <a class="navLink" onClick={onClick}>
       <div class="navItem">
-        <p id={item.id}>{item.title}</p>
+        <p id={item.id}>{item.name}</p>
       </div>
     </a>
   );
@@ -118,6 +108,7 @@ function NavigatorItem(item) {
 function NavBar() {
   const body = document.body;
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   function slideToggle() {
     if (isOpen) {
       setIsOpen(false);
@@ -127,11 +118,22 @@ function NavBar() {
       body.style.overflow = "hidden";
     }
   }
+  function searchByCategory(category) {
+    navigate("/searchedProducts", {
+      state: { category: category, text: "", maxPrice: 200000 },
+    });
+    window.location.reload();
+  }
   return (
     <div id="navBar">
       <SliderDiv isOpen={isOpen} toggle={slideToggle} />
       <AllSlider toggle={slideToggle} />
-      {navigatingItems.map(NavigatorItem)}
+      {navigatingItems.map((item) => (
+        <NavigatorItem
+          item={item}
+          onClick={() => searchByCategory(item.name)}
+        />
+      ))}
     </div>
   );
 }

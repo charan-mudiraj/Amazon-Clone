@@ -1,6 +1,8 @@
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import About from "./pages/About";
+import Cart from "./pages/Cart";
+import SearchedProducts from "./pages/SearchedProducts";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/searchedProducts" element={<SearchedProducts />} />
         <Route path="/product-id=0" element={<Product id={0} />} />
         <Route path="/product-id=1" element={<Product id={1} />} />
         <Route path="/product-id=2" element={<Product id={2} />} />

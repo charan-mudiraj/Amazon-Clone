@@ -15,15 +15,14 @@ function ProductContent(props) {
       const dir = "products_images/" + product.id + "/";
       const views = [1, 2, 3, 4, 5, 6];
       function updateMainView(event) {
-        let id = event.target.getAttribute("itemID");
-        if (id != null) {
-          console.log(id);
-          setMainImgId(Number(id));
+        const imgId = event.target.id;
+        if (imgId) {
+          setMainImgId(Number(event.target.id));
         }
       }
       function View(imgNo) {
         return (
-          <div id="md-view" onMouseOver={updateMainView} itemID={imgNo}>
+          <div id={imgNo} onMouseOver={updateMainView} className="md-view">
             <img src={dir + imgNo + ".jpg"} alt="" />
           </div>
         );
@@ -176,6 +175,31 @@ function ProductContent(props) {
       );
     }
     function BuyCard() {
+      function addToCart() {
+        const quantity = Number(
+          document.getElementById("productQuantity").value
+        );
+        let cart = JSON.parse(window.localStorage.getItem("amazon-cart"));
+        if (!cart) {
+          cart = [];
+        }
+        let item;
+        if (cart.length != 0) {
+          item = cart.find((item) => item.id === props.id);
+        }
+        if (item) {
+          item.qty += quantity;
+        } else {
+          item = {
+            id: props.id,
+            qty: quantity,
+          };
+          cart.push(item);
+          document.getElementById("cart-number").innerHTML = cart.length;
+        }
+        window.localStorage.setItem("amazon-cart", JSON.stringify(cart));
+        alert("Added to Cart !\nQuantity: " + quantity);
+      }
       return (
         <div id="md-buyCard">
           <p>
@@ -184,16 +208,20 @@ function ProductContent(props) {
           <p style={{ color: "green" }}>
             <b>In Stock</b>
           </p>
-          <p>
+          <div>
             Quantity:
-            <select>
+            <select id="productQuantity">
               <option>1</option>
               <option>2</option>
               <option>3</option>
             </select>
-          </p>
-          <button id="add-to-cart-btn">Add to Cart</button>
-          <button id="buy-now-btn">Buy Now</button>
+          </div>
+          <button id="add-to-cart-btn" onClick={addToCart}>
+            Add to Cart
+          </button>
+          <button id="buy-now-btn" onClick={() => alert("Order Placed !")}>
+            Buy Now
+          </button>
           <hr />
           <button id="add-to-wish-list-btn">Add to Wish List</button>
         </div>
@@ -219,12 +247,12 @@ function ProductContent(props) {
     </div>
   );
 }
-function Product(props) {
+function Product({ id }) {
   return (
     <div id="product">
       <Header />
       <NavBar />
-      <ProductContent id={props.id} />
+      <ProductContent id={id} />
       <ProductsList />
       <Footer />
     </div>

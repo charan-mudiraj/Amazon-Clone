@@ -4,7 +4,6 @@ import MultipleCard from "../components/product_cards/MultipleCard";
 import SingleCard from "../components/product_cards/SingleCard";
 import SingleExpandedCard from "../components/product_cards/SingleExpandedCard";
 import SinglePricedCard from "../components/product_cards/SinglePricedCard";
-import ProductCard from "../components/product_cards/SellerCard";
 import ProductsList from "../components/ProductsList";
 import "./css/Home.css";
 import { useState } from "react";

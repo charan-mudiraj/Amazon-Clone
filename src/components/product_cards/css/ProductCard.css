@@ -26,7 +26,7 @@
   font-size: 15px;
   align-items: baseline;
 }
-#pc_link {
+.pc_link {
   text-decoration: none;
   font-size: 13px;
 }

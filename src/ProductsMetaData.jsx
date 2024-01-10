@@ -12,10 +12,29 @@ function generateRandomArray(n, max) {
   return allNumbers.slice(0, n);
 }
 
+const productsCategories = [
+  {
+    id: 0,
+    name: "Computers & Categories",
+  },
+  {
+    id: 1,
+    name: "Mobile & Accessories",
+  },
+  {
+    id: 2,
+    name: "Home & Kitchen",
+  },
+  {
+    id: 3,
+    name: "Clothing & Accessories",
+  },
+];
 const products = [
   {
     id: 0,
     name: "Acer Laptop",
+    category: "Computers & Categories",
     title:
       "Acer Predator Helios 16 Gaming Laptop | 13th Gen Intel Core i7-13700HX | NVIDIA GeForce RTX 4060 | 16 2560 x 1600 165Hz G-SYNC Display | 16GB DDR5 | 1TB Gen 4 SSD | Killer Wi-Fi 6E | PH16-71-74UU",
     rating: "★★★★✰",
@@ -47,6 +66,7 @@ const products = [
   {
     id: 1,
     name: "Apple Phone",
+    category: "Mobile & Accessories",
     title: "Apple iPhone 14 Pro Max (1 TB) - Deep Purple",
     rating: "★★★★✰",
     price: "1,89,900",
@@ -75,6 +95,7 @@ const products = [
   {
     id: 2,
     name: "Dell Laptop",
+    category: "Computers & Categories",
     title:
       "Dell Inspiron 15 Pro Laptop | 12th Gen Intel Core i5-12600H | NVIDIA GeForce GTX 3050 | 15.6-inch FHD Display | 8GB DDR4 | 512GB SSD | Windows 10",
     rating: "★★★★★",
@@ -106,6 +127,7 @@ const products = [
   {
     id: 3,
     name: "HP Laptop",
+    category: "Computers & Categories",
     title:
       "HP Spectre x360 Convertible Laptop | 11th Gen Intel Core i7-1165G7 | Intel Iris Xe Graphics | 13.3-inch 4K OLED Display | 16GB DDR4 | 1TB SSD | Windows 11",
     rating: "★★★★★",
@@ -137,6 +159,7 @@ const products = [
   {
     id: 4,
     name: "Samsung Refrigerator",
+    category: "Home & Kitchen",
     title:
       "Samsung Refrigerator | 23 cu. ft. | Stainless Steel | Digital Inverter Compressor | LED Lighting | Energy Star Certified",
     rating: "★★★★★",
@@ -165,6 +188,7 @@ const products = [
   {
     id: 5,
     name: "WP Washing Machine",
+    category: "Home & Kitchen",
     title:
       "Whirlpool Washing Machine | 15kg Capacity | Front Load | In-Built Heater | 12 Wash Programs | Digital Display",
     rating: "★★★★✰",
@@ -193,6 +217,7 @@ const products = [
   {
     id: 6,
     name: "Panasonic Oven",
+    category: "Home & Kitchen",
     title:
       "Panasonic Microwave Oven | 1.6 cu. ft. | 1200W | Touch Control Panel | Stainless Steel Interior | Multi-Stage Cooking",
     rating: "★★★★★",
@@ -221,9 +246,10 @@ const products = [
   {
     id: 7,
     name: "Sony Headset",
+    category: "Computers & Categories",
     title: "Sony Noise-Canceling Wireless Headset WH-1000XM4",
     rating: "★★★★★",
-    price: "₹24,999.00",
+    price: "24,999.00",
     mrp: "29,999.00",
     discount: "17%",
     isEMI: true,
@@ -249,6 +275,7 @@ const products = [
   },
   {
     id: 8,
+    category: "Clothing & Accessories",
     name: "Fossil Smartwatch",
     title: "Fossil Gen 6 Smartwatch",
     rating: "★★★★★",
@@ -281,6 +308,7 @@ const products = [
   {
     id: 9,
     name: "Samsonite Laptop Bag",
+    category: "Computers & Categories",
     title: "Samsonite Pro-DLX 5 Laptop Backpack",
     rating: "★★★★★",
     price: "5,999.00",
@@ -311,4 +339,4 @@ const products = [
   },
 ];
 
-export { products, generateRandomArray };
+export { products, productsCategories, generateRandomArray };
