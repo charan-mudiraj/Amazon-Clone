@@ -14,6 +14,7 @@ function CartItem({ item, setCart }) {
     cart.splice(deleteIndex, 1);
     setCart(cart);
     window.localStorage.setItem("amazon-cart", JSON.stringify(cart));
+    document.getElementById("cart-number").innerHTML = cart.length;
   }
   return (
     <>
