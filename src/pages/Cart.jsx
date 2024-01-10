@@ -10,7 +10,7 @@ function CartItem({ item, setCart }) {
   function deleteItem(e) {
     const deleteId = Number(e.target.id);
     const cart = JSON.parse(window.localStorage.getItem("amazon-cart"));
-    const deleteIndex = cart.findIndex((item) => item.id === deleteId);
+    const deleteIndex = cart.findIndex((item) => Number(item.id) === deleteId);
     cart.splice(deleteIndex, 1);
     setCart(cart);
     window.localStorage.setItem("amazon-cart", JSON.stringify(cart));
