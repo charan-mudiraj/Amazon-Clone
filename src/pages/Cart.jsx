@@ -19,13 +19,13 @@ function CartItem({ item, setCart }) {
   return (
     <>
       <div className="cart-item" id={item.id} key={item.id}>
-        <a href={"/product-id=" + item.id}>
+        <a href={"/product?id=" + item.id}>
           <img src={imgPath} alt="" />
         </a>
 
         <div>
           <a
-            href={"/product-id=" + item.id}
+            href={"/product?id=" + item.id}
             style={{ textDecoration: "none", color: "black", fontSize: "18px" }}
           >
             <p style={{ marginTop: "20px" }}>{products[item.id].title}</p>
