@@ -9,40 +9,45 @@ import { useSearchParams } from "react-router-dom";
 
 function ProductContent(props) {
   const product = products[props.id];
-  let [mainImgId, setMainImgId] = useState(1);
-  let [mainImgVisible, setMainImgVisible] = useState(true);
   function MainDiv() {
+    const dir = "products_images/" + product.id + "/";
+    const [mainImgIndex, setMainImgIndex] = useState(0);
     function Views() {
-      const dir = "products_images/" + product.id + "/";
-      const views = [1, 2, 3, 4, 5, 6];
-      function updateMainView(event) {
-        const imgId = event.target.id;
-        if (imgId) {
-          setMainImgId(Number(event.target.id));
-        }
+      function updateMainView(e) {
+        const imgId = parseInt(e.target.id);
+        setMainImgIndex(imgId - 1);
       }
-      function View({ imgNo }) {
+      function View({ id }) {
         return (
-          <div id={imgNo} onMouseOver={updateMainView} className="md-view">
-            <img src={dir + imgNo + ".jpg"} alt="" />
-          </div>
+          <img
+            src={dir + id + ".jpg"}
+            alt=""
+            className="md-view"
+            onClick={updateMainView}
+            onMouseEnter={updateMainView}
+            id={id}
+          />
         );
       }
+      const viewsIds = [1, 2, 3, 4, 5, 6];
       return (
         <div id="md-views-flex">
-          {views.map((view, index) => (
-            <View imgNo={view} key={index} />
+          {viewsIds.map((id, index) => (
+            <View id={id} key={index} />
           ))}
         </div>
       );
     }
     function MainView() {
-      let imgPath = "products_images/" + product.id + "/" + mainImgId + ".jpg";
-      return (
-        <div id="md-curr-view">
-          <img src={imgPath} alt="" />
-        </div>
-      );
+      const imagesArr = [
+        <img src={dir + "1.jpg"} alt="" />,
+        <img src={dir + "2.jpg"} alt="" />,
+        <img src={dir + "3.jpg"} alt="" />,
+        <img src={dir + "4.jpg"} alt="" />,
+        <img src={dir + "5.jpg"} alt="" />,
+        <img src={dir + "6.jpg"} alt="" />,
+      ];
+      return <div id="md-curr-view">{imagesArr[mainImgIndex]}</div>;
     }
     function DetialsDiv() {
       function TitleDiv() {
