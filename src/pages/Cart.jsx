@@ -1,9 +1,8 @@
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { products } from "../ProductsMetaData";
 import { useState } from "react";
 import "./css/Cart.css";
+import NavBar from "../components/NavBar";
 
 function CartItem({ item, setCart }) {
   const imgPath = "products_images/" + item.id + "/1.jpg";
@@ -109,7 +108,6 @@ function CartContent() {
 export default function Cart() {
   return (
     <div id="cart-page">
-      <Header />
       <NavBar />
       <CartContent />
       <Footer />

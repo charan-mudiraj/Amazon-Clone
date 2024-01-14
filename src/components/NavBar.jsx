@@ -2,6 +2,8 @@ import "./css/NavBar.css";
 import { useState } from "react";
 import { productsCategories } from "../ProductsMetaData";
 import { useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { queryAtom } from "./query-atom";
 
 const navigatingItems = productsCategories;
 
@@ -99,12 +101,12 @@ function SliderDiv(props) {
 function AllSlider(props) {
   const moreIconPath = "icons_&_logos/more.jpg";
   return (
-    <button id="allSlider" onClick={props.toggle}>
+    <div id="allSlider" onClick={props.toggle}>
       <img src={moreIconPath} alt="" id="moreIcon" />
       <p>
         <b>All</b>
       </p>
-    </button>
+    </div>
   );
 }
 function NavigatorItem({ item, onClick }) {
@@ -120,6 +122,7 @@ function NavBar() {
   const body = document.body;
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const setQueryAtom = useSetRecoilState(queryAtom);
   function slideToggle() {
     if (isOpen) {
       setIsOpen(false);
@@ -130,10 +133,12 @@ function NavBar() {
     }
   }
   function searchByCategory(category) {
-    navigate("/searchedProducts", {
-      state: { category: category, text: "", maxPrice: 200000 },
+    setQueryAtom({
+      category: category,
+      text: "",
+      maxPrice: 200000,
     });
-    window.location.reload();
+    navigate("/searchedProducts");
   }
   return (
     <div id="navBar">

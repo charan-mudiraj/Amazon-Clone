@@ -1,6 +1,8 @@
 import "./css/Header.css";
 import { products, productsCategories } from "../ProductsMetaData";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { queryAtom } from "./query-atom";
 
 function Logo() {
   let iconPath = "icons_&_logos/logo.png";
@@ -19,18 +21,25 @@ function SearchBar() {
   function SearchFilterOption({ category }) {
     return <option>{category}</option>;
   }
+  const [queryAtomValue, setQueryAtom] = useRecoilState(queryAtom);
   function searchRequest() {
     const category = document.getElementById("searchFilter").value;
     const text = document.getElementById("searchBar").value;
     const maxPrice = document.getElementById("priceFilter").value;
-    navigate("/searchedProducts", {
-      state: { category: category, text: text, maxPrice: maxPrice },
+    setQueryAtom({
+      category: category,
+      text: text,
+      maxPrice: maxPrice,
     });
-    window.location.reload();
+    navigate("/searchedProducts");
   }
   function CategorySelector() {
     return (
-      <select id="searchFilter" className="searchBarComponent">
+      <select
+        id="searchFilter"
+        className="searchBarComponent"
+        defaultValue={queryAtomValue.category}
+      >
         <option>All</option>
         {productsCategories.map((category) => (
           <SearchFilterOption category={category.name} key={category.id} />
@@ -41,7 +50,11 @@ function SearchBar() {
   function PriceRangeSelector() {
     const priceRanges = [200000, 100000, 50000, 25000, 10000, 5000];
     return (
-      <select id="priceFilter" className="searchBarComponent">
+      <select
+        id="priceFilter"
+        className="searchBarComponent"
+        defaultValue={queryAtomValue.maxPrice}
+      >
         {priceRanges.map((price) => (
           <option value={price} key={price}>
             Under {price}

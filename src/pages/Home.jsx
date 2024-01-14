@@ -1,5 +1,3 @@
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
 import MultipleCard from "../components/product_cards/MultipleCard";
 import SingleCard from "../components/product_cards/SingleCard";
 import SingleExpandedCard from "../components/product_cards/SingleExpandedCard";
@@ -9,6 +7,7 @@ import "./css/Home.css";
 import { useState } from "react";
 import Footer from "../components/Footer";
 import SellerCard from "../components/product_cards/SellerCard";
+import NavBar from "../components/NavBar";
 
 function BannerImage({ num }) {
   const bannerPath = "other_images/banner" + num + ".jpg";
@@ -68,7 +67,6 @@ function BannerSlider() {
 function Home() {
   return (
     <div id="home">
-      <Header />
       <NavBar />
       <BannerSlider />
       <div id="home-content">

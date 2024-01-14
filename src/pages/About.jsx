@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import "./css/About.css";
 
 function AboutContent() {
@@ -50,7 +49,6 @@ function AboutContent() {
 function About() {
   return (
     <div id="about">
-      <Header />
       <AboutContent />
     </div>
   );

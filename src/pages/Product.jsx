@@ -1,11 +1,10 @@
-import Header from "../components/Header";
 import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
 import ProductsList from "../components/ProductsList.jsx";
 import React, { useState } from "react";
 import "./css/Product.css";
 import { products } from "../ProductsMetaData";
 import { useSearchParams } from "react-router-dom";
+import NavBar from "../components/NavBar";
 
 function ProductContent(props) {
   const product = products[props.id];
@@ -284,7 +283,6 @@ function Product() {
   const id = searchParams.get("id");
   return (
     <div id="product">
-      <Header />
       <NavBar />
       <ProductContent id={id} />
       <ProductsList />

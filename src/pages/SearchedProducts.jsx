@@ -1,24 +1,19 @@
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import ProductCard from "../components/product_cards/ProductCard";
 import { products } from "../ProductsMetaData";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import "./css/SearchedProducts.css";
+import { useRecoilValue } from "recoil";
+import { queryAtom } from "../components/query-atom";
+import NavBar from "../components/NavBar";
 
 export default function SearchedProducts() {
-  const state = useLocation().state;
-  let category, text, maxPrice;
-  if (state) {
-    category = state.category;
-    text = state.text.toLowerCase();
-    maxPrice = state.maxPrice;
-  } else {
-    category = "All";
-    text = "";
-    maxPrice = 200000;
-  }
+  const queryAtomValue = useRecoilValue(queryAtom);
+  const [category, text, maxPrice] = [
+    queryAtomValue.category,
+    queryAtomValue.text,
+    queryAtomValue.maxPrice,
+  ];
   const [searchResults, setSearchResults] = useState([]);
   function ProductBox(props) {
     return (
@@ -53,10 +48,9 @@ export default function SearchedProducts() {
       });
     }
     setSearchResults(results);
-  }, []);
+  }, [category, text, maxPrice]);
   return (
     <div id="searched-products">
-      <Header />
       <NavBar />
       <div id="sp-content">
         <div id="results-band">
