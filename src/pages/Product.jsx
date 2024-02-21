@@ -153,7 +153,7 @@ function ProductContent(props) {
         );
       }
       function SpecsDiv() {
-        function Spec(spec) {
+        function Spec({ spec }) {
           return (
             <div className="md-spec">
               <p>

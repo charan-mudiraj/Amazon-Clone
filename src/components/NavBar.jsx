@@ -71,7 +71,7 @@ function SliderDiv(props) {
       <div id="nb-sliderDiv" style={transitionStyle}>
         <div id="nb-sliderDiv-user">
           <img src={userIconPath} alt="user" />
-          <p>Hello, Charan</p>
+          <p>Hello, User</p>
         </div>
         <div id="nb-slider-contents">
           {sliderContents.map((content) => (
