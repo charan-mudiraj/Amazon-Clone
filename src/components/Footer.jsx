@@ -153,7 +153,7 @@ const moaItems = [
     desc: "100 million songs, ad-free Over 15 million podcast episodes",
   },
 ];
-function MoaItem(item) {
+function MoaItem({ item }) {
   return (
     <div className="f-moa-item">
       <a className="f-moa-item-title">{item.title}</a>
