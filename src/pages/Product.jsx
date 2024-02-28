@@ -5,6 +5,7 @@ import "./css/Product.css";
 import { products } from "../ProductsMetaData";
 import { useSearchParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import Product360 from "../components/Product360";
 
 function ProductContent(props) {
   const product = products[props.id];
@@ -20,7 +21,6 @@ function ProductContent(props) {
         return (
           <img
             src={dir + id + ".jpg"}
-            alt=""
             className="md-view"
             onClick={updateMainView}
             onMouseEnter={updateMainView}
@@ -39,12 +39,12 @@ function ProductContent(props) {
     }
     function MainView() {
       const imagesArr = [
-        <img src={dir + "1.jpg"} alt="" />,
-        <img src={dir + "2.jpg"} alt="" />,
-        <img src={dir + "3.jpg"} alt="" />,
-        <img src={dir + "4.jpg"} alt="" />,
-        <img src={dir + "5.jpg"} alt="" />,
-        <img src={dir + "6.jpg"} alt="" />,
+        product.is360 ? <Product360 /> : <img src={dir + "1.jpg"} />,
+        <img src={dir + "2.jpg"} />,
+        <img src={dir + "3.jpg"} />,
+        <img src={dir + "4.jpg"} />,
+        <img src={dir + "5.jpg"} />,
+        <img src={dir + "6.jpg"} />,
       ];
       return <div id="md-curr-view">{imagesArr[mainImgIndex]}</div>;
     }
@@ -261,7 +261,7 @@ function ProductContent(props) {
     return (
       <div id="pc-md">
         <Views />
-        <MainView href="temp_product/5.jpg" />
+        <MainView />
         <DetialsDiv />
         <BuyCard />
       </div>

@@ -41,3 +41,9 @@ Pixel Perfect and Fully Component based React Application. Similar to official [
 ### Cart Page
 
 <img src="./views/4.png">
+
+## Other Features
+
+### 360 View of a Product
+
+<img src="./views/360 product gif.gif">

@@ -48,6 +48,7 @@ const products = [
     isEMI: true,
     EMI: "6,885",
     delivery_day: "Friday, 24 November",
+    is360: false,
     specs: [
       { title: "Brand", desc: "Acer" },
       { title: "Model Name", desc: "Predator Helios 16" },
@@ -79,6 +80,7 @@ const products = [
     isEMI: true,
     EMI: "9,208",
     delivery_day: "Monday, 27 November",
+    is360: false,
     specs: [
       { title: "Brand", desc: "Apple" },
       { title: "Model Name", desc: "iPhone" },
@@ -109,6 +111,7 @@ const products = [
     isEMI: true,
     EMI: "3,650",
     delivery_day: "Wednesday, 22 November",
+    is360: false,
     specs: [
       { title: "Brand", desc: "Dell" },
       { title: "Model Name", desc: "Inspiron 15 Pro" },
@@ -141,6 +144,7 @@ const products = [
     isEMI: true,
     EMI: "5,750",
     delivery_day: "Monday, 20 November",
+    is360: false,
     specs: [
       { title: "Brand", desc: "HP" },
       { title: "Model Name", desc: "Spectre x360" },
@@ -173,6 +177,7 @@ const products = [
     isEMI: true,
     EMI: "2,500",
     delivery_day: "Thursday, 23 November",
+    is360: false,
     specs: [
       { title: "Brand", desc: "Samsung" },
       { title: "Capacity", desc: "23 cu. ft." },
@@ -202,6 +207,7 @@ const products = [
     isEMI: true,
     EMI: "2,000",
     delivery_day: "Tuesday, 21 November",
+    is360: false,
     specs: [
       { title: "Brand", desc: "Whirlpool" },
       { title: "Capacity", desc: "15kg" },
@@ -231,6 +237,7 @@ const products = [
     isEMI: true,
     EMI: "550",
     delivery_day: "Monday, 20 November",
+    is360: false,
     specs: [
       { title: "Brand", desc: "Panasonic" },
       { title: "Capacity", desc: "1.6 cu. ft." },
@@ -259,6 +266,7 @@ const products = [
     isEMI: false,
     EMI: "950",
     delivery_day: "Wednesday, 22 November",
+    is360: false,
     specs: [
       { title: "Brand", desc: "Sony" },
       { title: "Model", desc: "WH-1000XM4" },
@@ -289,6 +297,7 @@ const products = [
     isEMI: false,
     EMI: "825",
     delivery_day: "Thursday, 23 November",
+    is360: false,
     specs: [
       { title: "Brand", desc: "Fossil" },
       { title: "Model", desc: "Gen 6" },
@@ -321,6 +330,7 @@ const products = [
     isEMI: false,
     EMI: "230",
     delivery_day: "Friday, 24 November",
+    is360: false,
     specs: [
       { title: "Brand", desc: "Samsonite" },
       { title: "Model", desc: "Pro-DLX 5" },
@@ -354,6 +364,7 @@ const products = [
     isEMI: true,
     EMI: "1,064",
     delivery_day: "Friday, 12 January",
+    is360: false,
     specs: [
       { title: "Colour", desc: "Brown" },
       { title: "Brand", desc: "Home Centre" },
@@ -386,6 +397,7 @@ const products = [
     isEMI: true,
     EMI: "563",
     delivery_day: "17 - 22 January",
+    is360: false,
     specs: [
       { title: "Size", desc: "Queen" },
       { title: "Special Feature", desc: "Storage, Sturdy" },
@@ -419,6 +431,7 @@ const products = [
     isEMI: true,
     EMI: "582",
     delivery_day: "17 - 18 January",
+    is360: false,
     specs: [
       { title: "Brand", desc: "Madesa" },
       { title: "Product Dimensions", desc: "45D x 136W x 77H Centimeters" },
@@ -447,6 +460,7 @@ const products = [
     isEMI: true,
     EMI: "1,067",
     delivery_day: "Tomorrow, 11 January",
+    is360: false,
     specs: [
       { title: "Brand", desc: "OnePlus" },
       { title: "Model Name", desc: "Nord CE 3 Lite 5G" },
@@ -479,6 +493,7 @@ const products = [
     isEMI: true,
     EMI: "582",
     delivery_day: "Tomorrow, 11 January",
+    is360: false,
     specs: [
       { title: "Brand", desc: "realme" },
       { title: "Model Name", desc: "realme narzo N53" },
@@ -495,6 +510,39 @@ const products = [
       "The slim and sleek 7.49mm design adds a touch of elegance to your device, making it comfortable to hold and carry. The feather gold design enhances the visual appeal, giving your phone a premium and luxurious look.",
       "Capture stunning, detailed photos with the high-resolution 50MP AI camera, bringing your memories to life.The AI-powered camera technology ensures intelligent scene recognition and enhances your photography skills.",
       "Stay connected and productive for extended periods with the massive 5000mAh battery, eliminating the need for frequent recharging. Enjoy long hours of entertainment, gaming, and browsing without worrying about running out of battery power.",
+    ],
+  },
+  {
+    id: 15,
+    name: "Apple MacBook Air",
+    category: "Computers & Categories",
+    title:
+      "Apple 2022 MacBook Air Laptop with M2 chip: 34.46 cm (13.6-inch) Liquid Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, 1080p FaceTime HD Camera. Works with iPhone/iPad; Midnight",
+    rating: "★★★★✰",
+    price: "1,02,990",
+    mrp: "1,14,900",
+    discount: "10%",
+    isEMI: true,
+    EMI: "4,994",
+    delivery_day: "Tomorrow, 15 January",
+    is360: true,
+    specs: [
+      { title: "Brand", desc: "Apple" },
+      { title: "Model Name", desc: "MacBook Air" },
+      {
+        title: "Screen Size",
+        desc: "13.6",
+      },
+      { title: "Hard Disk", desc: "256 GB" },
+      { title: "RAM", desc: "8 GB" },
+      { title: "Operating System", desc: "Mac OS" },
+    ],
+    about: [
+      "STRIKINGLY THIN DESIGN : The redesigned MacBook Air is more portable than ever and weighs just 1.24 kg (2.7 pounds). Its the ultra-capable laptop that lets you work, play or create just about anything — anywhere.",
+      "SUPERCHARGED BY M2 : Get more done faster with a next-generation 8-core CPU, up to 10-core GPU and up to 24GB of unified memory.",
+      "UP TO 18 HOURS OF BATTERY LIFE : Go all day and into the night, thanks to the power-efficient performance of the Apple M2 chip.",
+      "BIG, BEAUTIFUL DISPLAY : The 34.46-centimetre (13.6-inch) Liquid Retina display features over 500 nits of brightness, P3 wide colour and support for one billion colours for vibrant images and incredible detail.",
+      "ADVANCED CAMERA AND AUDIO : Look sharp and sound great with a 1080p FaceTime HD camera, three-mic array and four-speaker sound system with Spatial Audio.",
     ],
   },
 ];
