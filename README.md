@@ -23,6 +23,7 @@ Pixel Perfect and Fully Component based React Application. Similar to official [
 - [Version 1 (Without RecoilJS)](https://www.youtube.com/watch?v=i4AHrKErNyk&list=PLgSNzrXIGnTpvxguSSNluQLR5kRNnpVmv&index=1)
 - [Difference After RecoilJS](https://www.youtube.com/watch?v=NoXu23FxxKQ&list=PLgSNzrXIGnTpvxguSSNluQLR5kRNnpVmv&index=2)
 - [Version 2 (With RecoilJS)](https://www.youtube.com/watch?v=qptFmxAa4IM&list=PLgSNzrXIGnTpvxguSSNluQLR5kRNnpVmv&index=3)
+- [Added 360 Product](https://www.youtube.com/watch?v=_WXx7NgDg2M&list=PLgSNzrXIGnTpvxguSSNluQLR5kRNnpVmv&index=4)
 
 ## Views
 
