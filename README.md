@@ -8,15 +8,15 @@ Pixel Perfect and Fully Component based React Application. Similar to official [
 
 ## Features
 
-➡️Search-Filter with 3 params (category, text, max-price range).
+➡️ Search-Filter with 3 params (category, text, max-price range).
 
-➡️Searched-products page.
+➡️ Searched-products page.
 
-➡️Cart Page.
+➡️ Cart Page.
 
-➡️Add-to-Cart & Delete-from-Cart.
+➡️ Add-to-Cart & Delete-from-Cart.
 
-➡️Added four new products.
+➡️ 360 degree Views of Product
 
 ## Video Links
 
