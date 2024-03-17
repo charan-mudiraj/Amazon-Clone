@@ -8,15 +8,19 @@ export default function Product360() {
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
-    dragStartX.current = e.clientX;
+    dragStartX.current = e.touches ? e.touches[0].clientX : e.clientX;
   };
 
   const handleMouseMove = (e) => {
-    e.preventDefault();
+    if (!e.touches) {
+      e.preventDefault();
+    }
+
     if (!isDragging) {
       return;
     }
-    const distance = e.clientX - dragStartX.current;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const distance = clientX - dragStartX.current;
     const sensitivity = 15; // Adjust sensitivity as needed
     if (Math.abs(distance) >= sensitivity) {
       if (distance < 0) {
@@ -24,7 +28,7 @@ export default function Product360() {
       } else {
         moveLeft();
       }
-      dragStartX.current = e.clientX;
+      dragStartX.current = e.touches ? e.touches[0].clientX : e.clientX;
     }
   };
 
@@ -44,17 +48,28 @@ export default function Product360() {
     <div style={{ position: "relative" }}>
       <img
         src="other_images/360.png"
-        style={{ position: "absolute", width: "60px", right: "30px" }}
+        style={{
+          position: "absolute",
+          width: "60px",
+          right: "30px",
+          top: "30px",
+        }}
       />
-      <div onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
-        <div onMouseDown={handleMouseDown}>
+      <div>
+        <div>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
             (imgName, index) => (
               <img
                 key={index}
                 src={dir + imgName + ".jpg"}
-                style={{ height: "450px" }}
+                style={{ height: "auto" }}
                 hidden={index !== currentView}
+                onMouseDown={handleMouseDown}
+                onTouchStart={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onTouchMove={handleMouseMove}
+                onTouchEnd={handleMouseUp}
               />
             )
           )}
