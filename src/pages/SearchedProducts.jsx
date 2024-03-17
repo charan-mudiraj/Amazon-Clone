@@ -28,7 +28,7 @@ export default function SearchedProducts() {
     };
     const isMatching = (title, text) => {
       title = title.toLowerCase();
-      return title.includes(text);
+      return title.includes(text.toLowerCase());
     };
     let results = [];
     if (category === "All") {
