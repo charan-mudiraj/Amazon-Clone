@@ -2,8 +2,7 @@
   margin: 0;
 }
 .component {
-  padding: 0px 10px;
-  height: 100%;
+  padding: 10px 10px;
   cursor: pointer;
 }
 .component:hover {
@@ -30,8 +29,8 @@
   background-color: #131921;
   padding: 5px 15px;
   align-items: center;
-  justify-content: space-around;
-  height: 50px;
+  justify-content: space-between;
+  height: auto;
 }
 #header #logoDiv {
   text-decoration: none;
@@ -47,22 +46,12 @@
   font-size: 15px;
   padding-top: 6px;
 }
-#location {
-  display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 2px;
-  align-items: center;
-}
-#locationIcon {
-  grid-row: 1 / span 2;
-  height: 16px;
-  padding-top: 14px;
-}
 #searchBarFlex {
   display: flex;
   outline: 2px solid transparent;
   transition: border 0.3s;
   flex-grow: 1;
+  flex: 1 1 200px;
 }
 .searchBarComponent {
   height: 42px;
@@ -185,4 +174,33 @@ option {
 }
 #cart div {
   position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+  #cart .bold {
+    display: none;
+  }
+  #searchBarLeft,
+  #priceFilter {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  #cart .bold {
+    display: block;
+  }
+  #header {
+    flex-wrap: wrap;
+  }
+  #searchBarFlex {
+    order: 4;
+  }
+}
+@media screen and (max-width: 470px) {
+  #header {
+    justify-content: center;
+  }
+  #logo {
+    padding-bottom: 0;
+  }
 }

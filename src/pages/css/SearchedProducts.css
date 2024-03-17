@@ -16,6 +16,7 @@
   padding: 25px;
   gap: 10px;
   min-height: 300px;
+  justify-content: center;
 }
 .product-box {
   border: 2px solid rgba(128, 128, 128, 0.226);

@@ -195,6 +195,10 @@ function ProductContent(props) {
           <hr />
           <PriceDiv />
           <hr />
+          <div id="buy-card-2">
+            <BuyCard />
+            <hr />
+          </div>
           <OffersDiv />
           <hr />
           <IconsDiv />
@@ -260,10 +264,14 @@ function ProductContent(props) {
     }
     return (
       <div id="pc-md">
-        <Views />
-        <MainView />
+        <div style={{ display: "flex", width: "100%" }} id="pc-md-div">
+          <Views />
+          <MainView />
+        </div>
         <DetialsDiv />
-        <BuyCard />
+        <div id="buy-card-1">
+          <BuyCard />
+        </div>
       </div>
     );
   }

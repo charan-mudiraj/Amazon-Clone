@@ -127,8 +127,15 @@ function Header() {
     <div id="header">
       <Logo />
       <SearchBar />
-      <DevelopersCommunity />
-      <Cart />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <DevelopersCommunity />
+        <Cart />
+      </div>
     </div>
   );
 }

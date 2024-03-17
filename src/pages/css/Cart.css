@@ -6,8 +6,8 @@
 }
 #cart-products {
   background-color: white;
-  width: 100%;
   padding: 20px;
+  flex: 0 0 75%;
 }
 #cart-products hr {
   border: 1px solid rgba(128, 128, 128, 0.295);
@@ -16,6 +16,7 @@
   display: flex;
   gap: 20px;
   color: rgba(17, 17, 17, 0.952);
+  margin-bottom: 10px;
 }
 .cart-item a {
   text-decoration: underline;
@@ -36,9 +37,9 @@
   background-color: white;
   height: fit-content;
   padding: 20px;
-  min-width: max-content;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 #cart-buy-card button {
   background-color: #ffd814;
@@ -48,4 +49,18 @@
   padding: 8px 0px;
   margin-top: 10px;
   cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  #cart-products {
+    flex: auto;
+  }
+  #cart-content {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 540px) {
+  .cart-item {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

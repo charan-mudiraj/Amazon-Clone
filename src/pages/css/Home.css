@@ -12,7 +12,7 @@ body {
 #banner-flex {
   display: flex;
   background: linear-gradient(on bottom, white, white);
-  background-color: #007185;
+  /* background-color: #007185; */
 }
 #banner-gradient {
   /* background-color: #007185; */
@@ -56,4 +56,24 @@ body {
 #home-content {
   position: relative;
   top: 315px;
+}
+
+@media screen and (max-width: 1300px) {
+  #flex-row {
+    flex-wrap: wrap;
+  }
+  #banner-gradient {
+    box-shadow: inset 0px -180px 150px -60px #e6e6e6;
+  }
+  #home-content {
+    top: 215;
+  }
+}
+@media screen and (max-width: 1100px) {
+  #home-content {
+    top: 0;
+  }
+  #banner-flex {
+    display: none;
+  }
 }

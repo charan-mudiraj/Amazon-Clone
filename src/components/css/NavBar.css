@@ -115,3 +115,8 @@
 .nb-slider-content p {
   padding: 10px 0 10px 35px;
 }
+@media screen and (max-width: 500px) {
+  .navLink {
+    display: none;
+  }
+}
