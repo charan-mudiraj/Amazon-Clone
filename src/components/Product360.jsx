@@ -1,10 +1,20 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Product360() {
   const [currentView, setCurrentView] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const dragStartX = useRef(0);
   const dir = "products_images/15/360/";
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentView((prev) => (prev == 16 ? clear(interval) : prev + 1));
+    }, 50);
+    const clear = (interval) => {
+      setCurrentView(0);
+      clearInterval(interval);
+    };
+  }, []);
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -52,7 +62,7 @@ export default function Product360() {
           position: "absolute",
           width: "60px",
           right: "30px",
-          top: "30px",
+          top: "15px",
         }}
       />
       <div>
