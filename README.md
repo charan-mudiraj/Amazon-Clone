@@ -16,7 +16,13 @@ Pixel Perfect and Fully Component based React Application. Similar to official [
 
 ➡️ Add-to-Cart & Delete-from-Cart.
 
-➡️ 360 degree Views of Product
+➡️ Responsiveness
+
+<details open>
+  <summary>➡️ 360 degree Views of Product</summary>
+  <br />
+  <img src="./views/360 product gif.gif">
+</details>
 
 ## Video Links
 
@@ -24,6 +30,7 @@ Pixel Perfect and Fully Component based React Application. Similar to official [
 - [Difference After RecoilJS](https://www.youtube.com/watch?v=NoXu23FxxKQ&list=PLgSNzrXIGnTpvxguSSNluQLR5kRNnpVmv&index=2)
 - [Version 2 (With RecoilJS)](https://www.youtube.com/watch?v=qptFmxAa4IM&list=PLgSNzrXIGnTpvxguSSNluQLR5kRNnpVmv&index=3)
 - [Added 360 Product](https://www.youtube.com/watch?v=_WXx7NgDg2M&list=PLgSNzrXIGnTpvxguSSNluQLR5kRNnpVmv&index=4)
+- [Made it Responsive](https://www.youtube.com/watch?v=sLoh0Ti5TE0&list=PLgSNzrXIGnTpvxguSSNluQLR5kRNnpVmv&index=5&t=47s)
 
 ## Views
 
@@ -42,9 +49,3 @@ Pixel Perfect and Fully Component based React Application. Similar to official [
 ### Cart Page
 
 <img src="./views/4.png">
-
-## Other Features
-
-### 360 View of a Product
-
-<img src="./views/360 product gif.gif">
