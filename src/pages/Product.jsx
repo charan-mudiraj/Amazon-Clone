@@ -28,11 +28,10 @@ function ProductContent(props) {
           />
         );
       }
-      const viewsIds = [1, 2, 3, 4, 5, 6];
       return (
         <div id="md-views-flex">
-          {viewsIds.map((id, index) => (
-            <View id={id} key={index} />
+          {Array.from({ length: 6 }).map((_, index) => (
+            <View id={index + 1} key={index} />
           ))}
         </div>
       );

@@ -49,12 +49,11 @@ function BannerSlider() {
       setScrollPosition(scrollPosition + 1);
     }
   }
-  const bannerNums = [1, 2, 3, 4, 5, 6];
   return (
     <div id="banner-slider">
       <div id="banner-flex" style={bannerTransitionStyle}>
-        {bannerNums.map((num) => (
-          <BannerImage num={num} key={num} />
+        {Array.from({ length: 6 }).map((_, index) => (
+          <BannerImage num={index + 1} key={index + 1} />
         ))}
       </div>
       <div id="banner-gradient"></div>

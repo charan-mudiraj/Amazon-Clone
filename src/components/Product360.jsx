@@ -17,6 +17,9 @@ export default function Product360() {
   }, []);
 
   const handleMouseDown = (e) => {
+    if (!e.touches) {
+      e.preventDefault();
+    }
     setIsDragging(true);
     dragStartX.current = e.touches ? e.touches[0].clientX : e.clientX;
   };
@@ -67,22 +70,23 @@ export default function Product360() {
       />
       <div>
         <div>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
-            (imgName, index) => (
-              <img
-                key={index}
-                src={dir + imgName + ".jpg"}
-                style={{ height: "auto" }}
-                hidden={index !== currentView}
-                onMouseDown={handleMouseDown}
-                onTouchStart={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onTouchMove={handleMouseMove}
-                onTouchEnd={handleMouseUp}
-              />
-            )
-          )}
+          {Array.from({ length: 16 }).map((_, index) => (
+            <img
+              key={index}
+              src={dir + (index + 1) + ".jpg"}
+              style={{
+                height: "auto",
+                cursor: isDragging ? "grabbing" : "grab",
+              }}
+              hidden={index !== currentView}
+              onMouseDown={handleMouseDown}
+              onTouchStart={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onTouchMove={handleMouseMove}
+              onTouchEnd={handleMouseUp}
+            />
+          ))}
         </div>
       </div>
     </div>
