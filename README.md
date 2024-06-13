@@ -19,7 +19,7 @@ Pixel Perfect and Fully Component based React Application. Similar to official [
 ➡️ Responsiveness
 
 <details open>
-  <summary>➡️ 360 degree Views of Product</summary>
+  <summary>➡️ 360 degree Views of Product ( <a href="https://amazon-clone-by-charan.vercel.app/product?id=15">Product Link</a> )</summary>
   <br />
   <img src="./views/360 product gif.gif">
 </details>
